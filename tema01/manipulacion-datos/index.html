@@ -1,0 +1,2252 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de los fundamentos de programación utilizando Java">
+      
+      
+        <meta name="author" content="Moisés">
+      
+      
+        <link rel="canonical" href="https://moimun.github.io/fundamentos-programacion-java/tema01/manipulacion-datos/">
+      
+      
+        <link rel="prev" href="../introduccion/">
+      
+      
+        <link rel="next" href="../../tema02/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Manipulación de datos - Fundamentos de Programación en Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manipulacion-basica-de-datos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Fundamentos de Programación en Java" class="md-header__button md-logo" aria-label="Fundamentos de Programación en Java" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 6.08s-6.84 1.71-3.56 5.48c.97 1.11-.25 2.11-.25 2.11s2.45-1.25 1.31-2.85c-1.06-1.47-1.86-2.2 2.5-4.74m-4.47 1.2C16.08 4.08 14 2 14 2c.84 3.3-2.96 4.3-4.33 6.36-.94 1.4.46 2.91 2.33 4.64-.71-1.7-3.22-3.16.03-5.72M9.37 17.47c-3.08.86 1.88 2.63 5.79.96-.38-.15-.75-.33-1.1-.54-1.36.31-2.76.37-4.14.18-1.31-.16-.55-.6-.55-.6m5.32-1.68c-1.75.38-3.56.47-5.34.26-1.31-.13-.45-.77-.45-.77-3.4 1.13 1.88 2.4 6.6 1.02-.29-.11-.57-.3-.81-.51m3.42 3.3s.57.47-.61.83c-2.28.68-9.43.89-11.41.03-.71-.31.63-.74 1.05-.83.23-.06.46-.08.69-.08-.79-.54-5.13 1.1-2.19 1.56 7.97 1.3 14.54-.6 12.47-1.51m-2.74-4.86c.29-.19.6-.35.92-.49 0 0-1.51.26-3.02.4-1.6.16-3.21.18-4.81.06-2.35-.31 1.29-1.2 1.29-1.2-1.1 0-2.18.26-3.16.75-2.05 1 5.1 1.45 8.78.48m.9 2.42c-.02.04-.04.07-.08.1 5.01-1.31 3.17-4.64.77-3.81-.13.06-.24.14-.31.25.14-.05.28-.09.43-.12 1.2-.24 2.92 1.63-.81 3.58m.13 4.61c-3.01.52-6.09.56-9.12.14 0 0 .46.38 2.81.53 3.6.23 9.13-.13 9.26-1.83.03.01-.23.65-2.95 1.16"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fundamentos de Programación en Java
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manipulación de datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fundamentos de Programación en Java" class="md-nav__button md-logo" aria-label="Fundamentos de Programación en Java" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 6.08s-6.84 1.71-3.56 5.48c.97 1.11-.25 2.11-.25 2.11s2.45-1.25 1.31-2.85c-1.06-1.47-1.86-2.2 2.5-4.74m-4.47 1.2C16.08 4.08 14 2 14 2c.84 3.3-2.96 4.3-4.33 6.36-.94 1.4.46 2.91 2.33 4.64-.71-1.7-3.22-3.16.03-5.72M9.37 17.47c-3.08.86 1.88 2.63 5.79.96-.38-.15-.75-.33-1.1-.54-1.36.31-2.76.37-4.14.18-1.31-.16-.55-.6-.55-.6m5.32-1.68c-1.75.38-3.56.47-5.34.26-1.31-.13-.45-.77-.45-.77-3.4 1.13 1.88 2.4 6.6 1.02-.29-.11-.57-.3-.81-.51m3.42 3.3s.57.47-.61.83c-2.28.68-9.43.89-11.41.03-.71-.31.63-.74 1.05-.83.23-.06.46-.08.69-.08-.79-.54-5.13 1.1-2.19 1.56 7.97 1.3 14.54-.6 12.47-1.51m-2.74-4.86c.29-.19.6-.35.92-.49 0 0-1.51.26-3.02.4-1.6.16-3.21.18-4.81.06-2.35-.31 1.29-1.2 1.29-1.2-1.1 0-2.18.26-3.16.75-2.05 1 5.1 1.45 8.78.48m.9 2.42c-.02.04-.04.07-.08.1 5.01-1.31 3.17-4.64.77-3.81-.13.06-.24.14-.31.25.14-.05.28-.09.43-.12 1.2-.24 2.92 1.63-.81 3.58m.13 4.61c-3.01.52-6.09.56-9.12.14 0 0 .46.38 2.81.53 3.6.23 9.13-.13 9.26-1.83.03.01-.23.65-2.95 1.16"/></svg>
+
+    </a>
+    Fundamentos de Programación en Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 01. Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 01. Introducción a la programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es la programación?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulación de datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulación de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Tipos de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Tipos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeros-enteros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Números enteros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeros-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Números reales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caracteres
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-booleanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores booleanos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadenas-de-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cadenas de texto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-transformacion-de-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Transformación de los datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. Transformación de los datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-aritmeticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores aritméticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores lógicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-relacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores relacionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-cadenas-de-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores de cadenas de texto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-gestion-de-datos-en-la-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Gestión de datos en la memoria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Gestión de datos en la memoria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identificadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palabras-reservadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palabras reservadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-e-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaración e inicialización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-valores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asignación de valores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-conversiones-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Conversiones de tipos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. Conversiones de tipos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversion-implicita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversión implícita
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-explicita-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversión explícita (casting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perdida-de-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pérdida de información
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-visualizacion-y-entrada-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Visualización y entrada de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Visualización y entrada de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salida-de-datos-por-pantalla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salida de datos por pantalla
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-datos-por-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada de datos por teclado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-introducir-un-nombre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: introducir un nombre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-sumar-dos-numeros-enteros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: sumar dos números enteros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algunas-consideraciones-sobre-la-entrada-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algunas consideraciones sobre la entrada de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-apartado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del apartado
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 02. Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 02. Programación estructurada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/algoritmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/estructuras-seleccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de selección
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/estructuras-repeticion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de repetición
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 03. Arrays y cadenas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 03. Arrays y cadenas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema03/arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplos de Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejemplos de Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/fundamentos-java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos de Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/estructuras-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Tipos de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Tipos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeros-enteros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Números enteros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeros-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Números reales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caracteres
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-booleanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores booleanos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadenas-de-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cadenas de texto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-transformacion-de-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Transformación de los datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. Transformación de los datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-aritmeticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores aritméticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores lógicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-relacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores relacionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-cadenas-de-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operadores de cadenas de texto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-gestion-de-datos-en-la-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Gestión de datos en la memoria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Gestión de datos en la memoria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identificadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palabras-reservadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palabras reservadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-e-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaración e inicialización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-valores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asignación de valores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-conversiones-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Conversiones de tipos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. Conversiones de tipos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversion-implicita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversión implícita
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-explicita-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversión explícita (casting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perdida-de-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pérdida de información
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-visualizacion-y-entrada-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Visualización y entrada de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Visualización y entrada de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salida-de-datos-por-pantalla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salida de datos por pantalla
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-datos-por-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada de datos por teclado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-introducir-un-nombre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: introducir un nombre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-sumar-dos-numeros-enteros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: sumar dos números enteros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algunas-consideraciones-sobre-la-entrada-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algunas consideraciones sobre la entrada de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-apartado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del apartado
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="manipulacion-basica-de-datos">Manipulación básica de datos<a class="headerlink" href="#manipulacion-basica-de-datos" title="Permanent link">&para;</a></h1>
+<p>Los programas informáticos trabajan con diferentes tipos de datos para realizar operaciones y obtener resultados.</p>
+<p>En Java podemos utilizar números, caracteres, valores lógicos y cadenas de texto. Para trabajar con estos datos necesitamos conocer sus tipos, cómo se almacenan en memoria y qué operaciones podemos realizar con ellos.</p>
+<p>En este apartado veremos cómo declarar variables y constantes, realizar operaciones, convertir datos y mostrar o introducir información mediante el teclado.</p>
+<hr />
+<h2 id="21-tipos-de-datos">2.1. Tipos de datos<a class="headerlink" href="#21-tipos-de-datos" title="Permanent link">&para;</a></h2>
+<p>Un <strong>tipo de dato</strong> permite indicar qué clase de información estamos utilizando y qué operaciones podemos realizar con ella.</p>
+<p>Los tipos de datos primitivos ya están incorporados en el lenguaje de programación y sirven como base para construir otros tipos de datos más complejos.</p>
+<p>En Java encontramos diferentes tipos de datos:</p>
+<h3 id="numeros-enteros">Números enteros<a class="headerlink" href="#numeros-enteros" title="Permanent link">&para;</a></h3>
+<p>Los números enteros representan valores numéricos sin parte decimal. Pueden ser positivos, negativos o cero.</p>
+<p>En Java podemos utilizar los siguientes tipos:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th style="text-align: right;">Tamaño</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td style="text-align: right;">8 bits</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td style="text-align: right;">16 bits</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td style="text-align: right;">32 bits</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td style="text-align: right;">64 bits</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int edad = 25;
+int temperatura = -5;
+int cantidad = 100;
+</code></pre>
+<h3 id="numeros-reales">Números reales<a class="headerlink" href="#numeros-reales" title="Permanent link">&para;</a></h3>
+<p>Los números reales permiten representar valores que tienen parte decimal.</p>
+<p>En Java se utilizan principalmente:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th style="text-align: right;">Tamaño</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float</code></td>
+<td style="text-align: right;">32 bits</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td style="text-align: right;">64 bits</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<pre><code class="language-java">float precio = 19.99f;
+double distancia = 125.75;
+double temperatura = -4.5;
+</code></pre>
+<p>En los literales de tipo <code>float</code> se utiliza la letra <code>f</code> al final del número.</p>
+<h3 id="caracteres">Caracteres<a class="headerlink" href="#caracteres" title="Permanent link">&para;</a></h3>
+<p>El tipo <code>char</code> permite almacenar un único carácter.</p>
+<p>Los caracteres se escriben entre comillas simples.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">char letra = 'A';
+char numero = '7';
+char simbolo = '#';
+</code></pre>
+<h3 id="valores-booleanos">Valores booleanos<a class="headerlink" href="#valores-booleanos" title="Permanent link">&para;</a></h3>
+<p>El tipo <code>boolean</code> permite representar dos valores lógicos:</p>
+<ul>
+<li><code>true</code>: verdadero.</li>
+<li><code>false</code>: falso.</li>
+</ul>
+<p>Se utiliza para comprobar condiciones y representar situaciones que solamente pueden tener dos estados.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">boolean activo = true;
+boolean encontrado = false;
+</code></pre>
+<h3 id="cadenas-de-texto">Cadenas de texto<a class="headerlink" href="#cadenas-de-texto" title="Permanent link">&para;</a></h3>
+<p>El tipo <code>String</code> permite almacenar secuencias de caracteres, es decir, textos de diferentes longitudes.</p>
+<p>A diferencia de los tipos anteriores, <code>String</code> no es un tipo primitivo de Java.</p>
+<p>Las cadenas de texto se escriben entre comillas dobles.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">String nombre = &quot;Carlos&quot;;
+String mensaje = &quot;Hola mundo&quot;;
+</code></pre>
+<h3 id="literales">Literales<a class="headerlink" href="#literales" title="Permanent link">&para;</a></h3>
+<p>Un <strong>literal</strong> es un valor fijo que escribimos directamente dentro del código fuente de un programa.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int edad = 20;
+double precio = 15.50;
+char letra = 'A';
+boolean activo = true;
+String nombre = &quot;Carlos&quot;;
+</code></pre>
+<p>En estos ejemplos, <code>20</code>, <code>15.50</code>, <code>'A'</code>, <code>true</code> y <code>"Carlos"</code> son valores literales.</p>
+<hr />
+<h2 id="22-transformacion-de-los-datos">2.2. Transformación de los datos<a class="headerlink" href="#22-transformacion-de-los-datos" title="Permanent link">&para;</a></h2>
+<p>Dentro de un programa podemos realizar operaciones sobre los datos para obtener nuevos valores.</p>
+<p>Cada tipo de dato establece qué operaciones se pueden realizar con él.</p>
+<p>Las operaciones se pueden dividir en dos grupos:</p>
+<ul>
+<li><strong>Unarias:</strong> trabajan con un único operando.</li>
+<li><strong>Binarias:</strong> necesitan dos operandos.</li>
+</ul>
+<h3 id="operadores-aritmeticos">Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permanent link">&para;</a></h3>
+<p>Los operadores aritméticos permiten realizar operaciones matemáticas.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operación</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Suma</td>
+<td><code>5 + 3</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Resta</td>
+<td><code>5 - 3</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplicación</td>
+<td><code>5 * 3</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>División</td>
+<td><code>10 / 2</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Módulo (resto)</td>
+<td><code>10 % 3</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo en Java:</p>
+<pre><code class="language-java">int numero1 = 10;
+int numero2 = 3;
+
+int suma = numero1 + numero2;
+int resta = numero1 - numero2;
+int multiplicacion = numero1 * numero2;
+int division = numero1 / numero2;
+int resto = numero1 % numero2;
+</code></pre>
+<p>El operador <code>%</code> permite obtener el resto de una división.</p>
+<h3 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h3>
+<p>Los operadores lógicos permiten trabajar con valores booleanos y combinar condiciones.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Nombre</th>
+<th>Funcionamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>AND</td>
+<td>Verdadero si las dos condiciones son verdaderas.</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>OR</td>
+<td>Verdadero si al menos una condición es verdadera.</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>NOT</td>
+<td>Invierte el valor lógico.</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<pre><code class="language-java">boolean condicion1 = true;
+boolean condicion2 = false;
+
+System.out.println(condicion1 &amp;&amp; condicion2);
+System.out.println(condicion1 || condicion2);
+System.out.println(!condicion1);
+</code></pre>
+<h3 id="operadores-relacionales">Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permanent link">&para;</a></h3>
+<p>Permiten comparar dos valores y obtener un resultado booleano.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>Igual que</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Diferente de</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Mayor que</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Menor que</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Mayor o igual que</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Menor o igual que</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int edad = 20;
+
+System.out.println(edad &gt;= 18);
+System.out.println(edad == 20);
+System.out.println(edad &lt; 18);
+</code></pre>
+<h3 id="operadores-de-cadenas-de-texto">Operadores de cadenas de texto<a class="headerlink" href="#operadores-de-cadenas-de-texto" title="Permanent link">&para;</a></h3>
+<p>En Java podemos utilizar el operador <code>+</code> para concatenar cadenas de texto.</p>
+<p>La concatenación consiste en unir diferentes cadenas de texto para formar una nueva.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">String saludo = &quot;Hola&quot;;
+String nombre = &quot;Carlos&quot;;
+
+System.out.println(saludo + &quot; &quot; + nombre);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">Hola Carlos
+</code></pre>
+<p>También podemos concatenar cadenas de texto con otros tipos de datos:</p>
+<pre><code class="language-java">int edad = 25;
+
+System.out.println(&quot;La edad es &quot; + edad);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">La edad es 25
+</code></pre>
+<hr />
+<h2 id="23-gestion-de-datos-en-la-memoria">2.3. Gestión de datos en la memoria<a class="headerlink" href="#23-gestion-de-datos-en-la-memoria" title="Permanent link">&para;</a></h2>
+<p>Cuando ejecutamos un programa, necesitamos almacenar los datos para poder utilizarlos posteriormente.</p>
+<p>Para ello utilizamos variables y constantes.</p>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>Una <strong>variable</strong> es un espacio de memoria identificado mediante un nombre, donde podemos almacenar un valor.</p>
+<p>El valor de una variable puede cambiar durante la ejecución del programa.</p>
+<p>Antes de utilizar una variable debemos declararla indicando su tipo de dato y su identificador.</p>
+<p>La sintaxis es:</p>
+<pre><code class="language-java">tipo identificador = valorInicial;
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int edad = 25;
+double precio = 19.99;
+String nombre = &quot;Carlos&quot;;
+boolean activo = true;
+</code></pre>
+<p>En estos ejemplos:</p>
+<ul>
+<li><code>int</code>, <code>double</code>, <code>String</code> y <code>boolean</code> son los tipos de datos.</li>
+<li><code>edad</code>, <code>precio</code>, <code>nombre</code> y <code>activo</code> son los identificadores.</li>
+<li>Los valores situados después del signo <code>=</code> son los valores iniciales.</li>
+</ul>
+<h3 id="identificadores">Identificadores<a class="headerlink" href="#identificadores" title="Permanent link">&para;</a></h3>
+<p>Un identificador es el nombre que utilizamos para reconocer una variable, constante u otro elemento del programa.</p>
+<p>Para elegir identificadores debemos respetar las reglas del lenguaje Java.</p>
+<p>Algunas recomendaciones son:</p>
+<ul>
+<li>Utilizar nombres que indiquen qué información almacenan.</li>
+<li>No utilizar espacios en blanco.</li>
+<li>No comenzar el nombre con un número.</li>
+<li>No utilizar palabras reservadas del lenguaje.</li>
+<li>Diferenciar entre mayúsculas y minúsculas.</li>
+</ul>
+<p>Ejemplos:</p>
+<pre><code class="language-java">int edad;
+double precioProducto;
+String nombreAlumno;
+</code></pre>
+<h3 id="palabras-reservadas">Palabras reservadas<a class="headerlink" href="#palabras-reservadas" title="Permanent link">&para;</a></h3>
+<p>Las palabras reservadas son palabras que tienen un significado especial dentro del lenguaje Java.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li><code>int</code></li>
+<li><code>double</code></li>
+<li><code>boolean</code></li>
+<li><code>if</code></li>
+<li><code>else</code></li>
+<li><code>for</code></li>
+<li><code>while</code></li>
+<li><code>class</code></li>
+<li><code>public</code></li>
+<li><code>static</code></li>
+<li><code>return</code></li>
+</ul>
+<p>No podemos utilizarlas como identificadores de nuestras variables.</p>
+<h3 id="declaracion-e-inicializacion">Declaración e inicialización<a class="headerlink" href="#declaracion-e-inicializacion" title="Permanent link">&para;</a></h3>
+<p>Declarar una variable significa indicar su tipo de dato y su nombre.</p>
+<p>Inicializarla significa asignarle un valor inicial.</p>
+<p>Podemos hacer ambas operaciones al mismo tiempo:</p>
+<pre><code class="language-java">int numero = 10;
+</code></pre>
+<p>También podemos declarar primero la variable y asignarle un valor después:</p>
+<pre><code class="language-java">int numero;
+numero = 10;
+</code></pre>
+<h3 id="asignacion-de-valores">Asignación de valores<a class="headerlink" href="#asignacion-de-valores" title="Permanent link">&para;</a></h3>
+<p>El operador <code>=</code> permite asignar un valor a una variable.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int numero = 10;
+
+numero = 20;
+
+System.out.println(numero);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">20
+</code></pre>
+<p>Cuando asignamos un nuevo valor, el anterior queda sustituido.</p>
+<h3 id="constantes">Constantes<a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h3>
+<p>Una <strong>constante</strong> es un valor que se establece una vez y no puede modificarse posteriormente.</p>
+<p>En Java se utiliza la palabra reservada <code>final</code> para declarar una constante.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">final double PI = 3.14159;
+final int EDAD_MINIMA = 18;
+</code></pre>
+<p>Por convenio, los nombres de las constantes suelen escribirse en mayúsculas.</p>
+<p>Las constantes son útiles cuando un mismo valor aparece varias veces en el programa y no queremos que cambie.</p>
+<hr />
+<h2 id="24-conversiones-de-tipos">2.4. Conversiones de tipos<a class="headerlink" href="#24-conversiones-de-tipos" title="Permanent link">&para;</a></h2>
+<p>En ocasiones necesitamos transformar un valor de un tipo de dato a otro diferente.</p>
+<p>Este proceso se conoce como <strong>conversión de tipos</strong> o <em>casting</em>.</p>
+<p>Por ejemplo, podemos necesitar convertir un número entero en un número real o transformar un número real en un entero.</p>
+<h3 id="conversion-implicita">Conversión implícita<a class="headerlink" href="#conversion-implicita" title="Permanent link">&para;</a></h3>
+<p>Se produce cuando Java realiza automáticamente una conversión entre determinados tipos compatibles.</p>
+<p>Por ejemplo, podemos asignar un valor entero a una variable de tipo <code>double</code>:</p>
+<pre><code class="language-java">int numero = 10;
+
+double resultado = numero;
+
+System.out.println(resultado);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">10.0
+</code></pre>
+<p>En este caso Java convierte automáticamente el entero en un número real.</p>
+<h3 id="conversion-explicita-casting">Conversión explícita (casting)<a class="headerlink" href="#conversion-explicita-casting" title="Permanent link">&para;</a></h3>
+<p>Se utiliza cuando queremos indicar directamente el tipo de dato al que queremos convertir un valor.</p>
+<p>Para ello escribimos el tipo de destino entre paréntesis delante del valor.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">double numeroReal = 15.75;
+
+int numeroEntero = (int) numeroReal;
+
+System.out.println(numeroEntero);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">15
+</code></pre>
+<p>Al convertir un número real en un entero se pierden los decimales. No se realiza un redondeo, sino que se eliminan.</p>
+<h3 id="perdida-de-informacion">Pérdida de información<a class="headerlink" href="#perdida-de-informacion" title="Permanent link">&para;</a></h3>
+<p>Al realizar conversiones debemos tener cuidado, porque algunos valores pueden perder información.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>Al convertir un número real en entero se eliminan los decimales.</li>
+<li>Al asignar un valor que supera el rango del tipo de destino se puede producir un desbordamiento.</li>
+</ul>
+<p>Por eso debemos comprobar que el valor que queremos convertir puede representarse correctamente con el nuevo tipo de dato.</p>
+<hr />
+<h2 id="25-visualizacion-y-entrada-de-datos">2.5. Visualización y entrada de datos<a class="headerlink" href="#25-visualizacion-y-entrada-de-datos" title="Permanent link">&para;</a></h2>
+<p>Los programas necesitan mostrar información al usuario y, en muchas ocasiones, recoger datos que este introduce mediante el teclado.</p>
+<p>En Java podemos realizar estas operaciones utilizando diferentes instrucciones.</p>
+<h3 id="salida-de-datos-por-pantalla">Salida de datos por pantalla<a class="headerlink" href="#salida-de-datos-por-pantalla" title="Permanent link">&para;</a></h3>
+<p>Para mostrar información por pantalla utilizamos principalmente:</p>
+<ul>
+<li><code>System.out.print()</code>: muestra información sin añadir un salto de línea al final.</li>
+<li><code>System.out.println()</code>: muestra información y añade un salto de línea al final.</li>
+</ul>
+<p>Ejemplo:</p>
+<pre><code class="language-java">System.out.print(&quot;Hola &quot;);
+System.out.print(&quot;mundo&quot;);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">Hola mundo
+</code></pre>
+<p>Si utilizamos <code>println()</code>:</p>
+<pre><code class="language-java">System.out.println(&quot;Hola&quot;);
+System.out.println(&quot;mundo&quot;);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">Hola
+mundo
+</code></pre>
+<p>Estas instrucciones permiten mostrar valores de diferentes tipos de datos.</p>
+<h3 id="entrada-de-datos-por-teclado">Entrada de datos por teclado<a class="headerlink" href="#entrada-de-datos-por-teclado" title="Permanent link">&para;</a></h3>
+<p>Para recoger información introducida por el usuario podemos utilizar la clase <code>Scanner</code>, que pertenece al paquete <code>java.util</code>.</p>
+<p>Primero debemos importarla:</p>
+<pre><code class="language-java">import java.util.Scanner;
+</code></pre>
+<p>Después creamos un objeto Scanner para leer los datos del teclado:</p>
+<pre><code class="language-java">Scanner entrada = new Scanner(System.in);
+</code></pre>
+<p>Según el tipo de dato que queramos leer, utilizaremos diferentes métodos:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Tipo de dato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nextInt()</code></td>
+<td>Número entero</td>
+</tr>
+<tr>
+<td><code>nextDouble()</code></td>
+<td>Número real</td>
+</tr>
+<tr>
+<td><code>nextFloat()</code></td>
+<td>Número real de tipo float</td>
+</tr>
+<tr>
+<td><code>nextBoolean()</code></td>
+<td>Valor booleano</td>
+</tr>
+<tr>
+<td><code>nextLine()</code></td>
+<td>Cadena de texto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-introducir-un-nombre">Ejemplo: introducir un nombre<a class="headerlink" href="#ejemplo-introducir-un-nombre" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class ValorNom {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print(&quot;Escribe tu nombre: &quot;);
+
+        String nombre = entrada.nextLine();
+
+        System.out.println(&quot;Tu nombre es: &quot; + nombre);
+    }
+}
+</code></pre>
+<p>En este ejemplo:</p>
+<ol>
+<li>Importamos la clase <code>Scanner</code>.</li>
+<li>Creamos el objeto <code>entrada</code>.</li>
+<li>Mostramos un mensaje solicitando el nombre.</li>
+<li>Recogemos el texto mediante <code>nextLine()</code>.</li>
+<li>Mostramos el nombre introducido.</li>
+</ol>
+<h3 id="ejemplo-sumar-dos-numeros-enteros">Ejemplo: sumar dos números enteros<a class="headerlink" href="#ejemplo-sumar-dos-numeros-enteros" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class SumarNumeros {
+
+    public static void main(String[] args) {
+
+        Scanner lector = new Scanner(System.in);
+
+        System.out.print(&quot;Escribe un número: &quot;);
+        int primerNumero = lector.nextInt();
+
+        lector.nextLine();
+
+        System.out.print(&quot;Escribe otro número: &quot;);
+        int segundoNumero = lector.nextInt();
+
+        lector.nextLine();
+
+        int resultado = primerNumero + segundoNumero;
+
+        System.out.println(&quot;El resultado de la suma es &quot; + resultado + &quot;.&quot;);
+    }
+}
+</code></pre>
+<p>Si introducimos los números 5 y 8, el resultado será:</p>
+<pre><code class="language-text">Escribe un número: 5
+Escribe otro número: 8
+El resultado de la suma es 13.
+</code></pre>
+<h3 id="algunas-consideraciones-sobre-la-entrada-de-datos">Algunas consideraciones sobre la entrada de datos<a class="headerlink" href="#algunas-consideraciones-sobre-la-entrada-de-datos" title="Permanent link">&para;</a></h3>
+<p>Cuando utilizamos <code>Scanner</code>, debemos tener en cuenta que:</p>
+<ul>
+<li>El dato introducido debe coincidir con el tipo que espera el programa.</li>
+<li>Si esperamos un número entero y se introduce un texto, se puede producir un error.</li>
+<li>Para introducir números reales, el separador decimal puede depender de la configuración regional.</li>
+<li>El método <code>nextLine()</code> permite leer una línea completa de texto.</li>
+<li>Después de determinadas lecturas numéricas puede ser necesario utilizar <code>nextLine()</code> para consumir el salto de línea pendiente.</li>
+</ul>
+<hr />
+<h2 id="resumen-del-apartado">Resumen del apartado<a class="headerlink" href="#resumen-del-apartado" title="Permanent link">&para;</a></h2>
+<p>En este apartado hemos aprendido:</p>
+<ul>
+<li>Los principales tipos de datos utilizados en Java.</li>
+<li>Qué son los literales y los operadores.</li>
+<li>Cómo realizar operaciones aritméticas, lógicas y relacionales.</li>
+<li>Qué son las variables, los identificadores y las constantes.</li>
+<li>Cómo declarar, inicializar y modificar variables.</li>
+<li>Cómo realizar conversiones de tipos.</li>
+<li>Cómo mostrar información mediante <code>print()</code> y <code>println()</code>.</li>
+<li>Cómo recoger datos utilizando la clase <code>Scanner</code>.</li>
+</ul>
+<hr />
+<p><a href="../">Volver al Tema 01</a></p>
+<p><a href="../../">Volver a la página principal</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

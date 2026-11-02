@@ -1,0 +1,3312 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de los fundamentos de programación utilizando Java">
+      
+      
+        <meta name="author" content="Moisés">
+      
+      
+        <link rel="canonical" href="https://moimun.github.io/fundamentos-programacion-java/tema03/arrays/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../ejemplos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Arrays - Fundamentos de Programación en Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arrays" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Fundamentos de Programación en Java" class="md-header__button md-logo" aria-label="Fundamentos de Programación en Java" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 6.08s-6.84 1.71-3.56 5.48c.97 1.11-.25 2.11-.25 2.11s2.45-1.25 1.31-2.85c-1.06-1.47-1.86-2.2 2.5-4.74m-4.47 1.2C16.08 4.08 14 2 14 2c.84 3.3-2.96 4.3-4.33 6.36-.94 1.4.46 2.91 2.33 4.64-.71-1.7-3.22-3.16.03-5.72M9.37 17.47c-3.08.86 1.88 2.63 5.79.96-.38-.15-.75-.33-1.1-.54-1.36.31-2.76.37-4.14.18-1.31-.16-.55-.6-.55-.6m5.32-1.68c-1.75.38-3.56.47-5.34.26-1.31-.13-.45-.77-.45-.77-3.4 1.13 1.88 2.4 6.6 1.02-.29-.11-.57-.3-.81-.51m3.42 3.3s.57.47-.61.83c-2.28.68-9.43.89-11.41.03-.71-.31.63-.74 1.05-.83.23-.06.46-.08.69-.08-.79-.54-5.13 1.1-2.19 1.56 7.97 1.3 14.54-.6 12.47-1.51m-2.74-4.86c.29-.19.6-.35.92-.49 0 0-1.51.26-3.02.4-1.6.16-3.21.18-4.81.06-2.35-.31 1.29-1.2 1.29-1.2-1.1 0-2.18.26-3.16.75-2.05 1 5.1 1.45 8.78.48m.9 2.42c-.02.04-.04.07-.08.1 5.01-1.31 3.17-4.64.77-3.81-.13.06-.24.14-.31.25.14-.05.28-.09.43-.12 1.2-.24 2.92 1.63-.81 3.58m.13 4.61c-3.01.52-6.09.56-9.12.14 0 0 .46.38 2.81.53 3.6.23 9.13-.13 9.26-1.83.03.01-.23.65-2.95 1.16"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fundamentos de Programación en Java
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arrays
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fundamentos de Programación en Java" class="md-nav__button md-logo" aria-label="Fundamentos de Programación en Java" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 6.08s-6.84 1.71-3.56 5.48c.97 1.11-.25 2.11-.25 2.11s2.45-1.25 1.31-2.85c-1.06-1.47-1.86-2.2 2.5-4.74m-4.47 1.2C16.08 4.08 14 2 14 2c.84 3.3-2.96 4.3-4.33 6.36-.94 1.4.46 2.91 2.33 4.64-.71-1.7-3.22-3.16.03-5.72M9.37 17.47c-3.08.86 1.88 2.63 5.79.96-.38-.15-.75-.33-1.1-.54-1.36.31-2.76.37-4.14.18-1.31-.16-.55-.6-.55-.6m5.32-1.68c-1.75.38-3.56.47-5.34.26-1.31-.13-.45-.77-.45-.77-3.4 1.13 1.88 2.4 6.6 1.02-.29-.11-.57-.3-.81-.51m3.42 3.3s.57.47-.61.83c-2.28.68-9.43.89-11.41.03-.71-.31.63-.74 1.05-.83.23-.06.46-.08.69-.08-.79-.54-5.13 1.1-2.19 1.56 7.97 1.3 14.54-.6 12.47-1.51m-2.74-4.86c.29-.19.6-.35.92-.49 0 0-1.51.26-3.02.4-1.6.16-3.21.18-4.81.06-2.35-.31 1.29-1.2 1.29-1.2-1.1 0-2.18.26-3.16.75-2.05 1 5.1 1.45 8.78.48m.9 2.42c-.02.04-.04.07-.08.1 5.01-1.31 3.17-4.64.77-3.81-.13.06-.24.14-.31.25.14-.05.28-.09.43-.12 1.2-.24 2.92 1.63-.81 3.58m.13 4.61c-3.01.52-6.09.56-9.12.14 0 0 .46.38 2.81.53 3.6.23 9.13-.13 9.26-1.83.03.01-.23.65-2.95 1.16"/></svg>
+
+    </a>
+    Fundamentos de Programación en Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 01. Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 01. Introducción a la programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema01/introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es la programación?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema01/manipulacion-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulación de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 02. Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 02. Programación estructurada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/algoritmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/estructuras-seleccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de selección
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema02/estructuras-repeticion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de repetición
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 03. Arrays y cadenas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 03. Arrays y cadenas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-declaracion-e-inicializacion-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Declaración e inicialización de arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Declaración e inicialización de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-declaracion-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Declaración de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-inicializacion-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Inicialización de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-inicializacion-de-todos-los-elementos-con-un-mismo-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Inicialización de todos los elementos con un mismo valor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-consideraciones-sobre-la-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Consideraciones sobre la inicialización
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-manipulacion-de-datos-dentro-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manipulación de datos dentro de arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manipulación de datos dentro de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-acceder-a-las-posiciones-de-un-array-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Acceder a las posiciones de un array: índices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-modificar-los-elementos-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Modificar los elementos de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-realizar-operaciones-con-elementos-de-diferentes-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Realizar operaciones con elementos de diferentes arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-errores-al-acceder-a-las-posiciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Errores al acceder a las posiciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-atributo-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Atributo length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-recorrer-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Recorrer un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-almacenamiento-de-la-entrada-de-datos-en-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Almacenamiento de la entrada de datos en un array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Almacenamiento de la entrada de datos en un array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-leer-varios-valores-utilizando-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Leer varios valores utilizando Scanner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-comprobar-el-tipo-de-dato-introducido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Comprobar el tipo de dato introducido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-leer-una-cantidad-conocida-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Leer una cantidad conocida de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-leer-una-cantidad-desconocida-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Leer una cantidad desconocida de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-almacenar-datos-en-arrays-parcialmente-ocupados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Almacenar datos en arrays parcialmente ocupados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-esquemas-fundamentales-en-la-utilizacion-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Esquemas fundamentales en la utilización de arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Esquemas fundamentales en la utilización de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-iniciacion-procedural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Iniciación procedural
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-recorrido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Recorrido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-busqueda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Búsqueda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-arrays-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Arrays auxiliares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-copia-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Copia de arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-cambio-de-tamano-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. Cambio de tamaño de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-ordenacion-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. Ordenación de arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-apartado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del apartado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-arrays-multidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Arrays multidimensionales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Arrays multidimensionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-arrays-bidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Arrays bidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-declaracion-e-inicializacion-de-arrays-bidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Declaración e inicialización de arrays bidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-mostrar-el-contenido-de-una-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Mostrar el contenido de una matriz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-acceder-a-las-posiciones-de-una-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Acceder a las posiciones de una matriz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-recorrer-arrays-bidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5. Recorrer arrays bidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-iniciacion-procedural-de-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6. Iniciación procedural de matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-recorrido-de-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7. Recorrido de matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-busqueda-en-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8. Búsqueda en matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-arrays-de-mas-de-dos-dimensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9. Arrays de más de dos dimensiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510-ejemplo-practico-almacenar-temperaturas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10. Ejemplo práctico: almacenar temperaturas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-apartado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del apartado
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplos de Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejemplos de Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/fundamentos-java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos de Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/estructuras-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ejemplos/arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-declaracion-e-inicializacion-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Declaración e inicialización de arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Declaración e inicialización de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-declaracion-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Declaración de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-inicializacion-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Inicialización de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-inicializacion-de-todos-los-elementos-con-un-mismo-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Inicialización de todos los elementos con un mismo valor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-consideraciones-sobre-la-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Consideraciones sobre la inicialización
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-manipulacion-de-datos-dentro-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manipulación de datos dentro de arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manipulación de datos dentro de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-acceder-a-las-posiciones-de-un-array-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Acceder a las posiciones de un array: índices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-modificar-los-elementos-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Modificar los elementos de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-realizar-operaciones-con-elementos-de-diferentes-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Realizar operaciones con elementos de diferentes arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-errores-al-acceder-a-las-posiciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Errores al acceder a las posiciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-atributo-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Atributo length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-recorrer-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Recorrer un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-almacenamiento-de-la-entrada-de-datos-en-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Almacenamiento de la entrada de datos en un array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Almacenamiento de la entrada de datos en un array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-leer-varios-valores-utilizando-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Leer varios valores utilizando Scanner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-comprobar-el-tipo-de-dato-introducido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Comprobar el tipo de dato introducido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-leer-una-cantidad-conocida-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Leer una cantidad conocida de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-leer-una-cantidad-desconocida-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Leer una cantidad desconocida de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-almacenar-datos-en-arrays-parcialmente-ocupados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Almacenar datos en arrays parcialmente ocupados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-esquemas-fundamentales-en-la-utilizacion-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Esquemas fundamentales en la utilización de arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Esquemas fundamentales en la utilización de arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-iniciacion-procedural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Iniciación procedural
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-recorrido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Recorrido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-busqueda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Búsqueda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-arrays-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Arrays auxiliares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-copia-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Copia de arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-cambio-de-tamano-de-un-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. Cambio de tamaño de un array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-ordenacion-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. Ordenación de arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-apartado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del apartado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-arrays-multidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Arrays multidimensionales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Arrays multidimensionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-arrays-bidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Arrays bidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-declaracion-e-inicializacion-de-arrays-bidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Declaración e inicialización de arrays bidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-mostrar-el-contenido-de-una-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Mostrar el contenido de una matriz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-acceder-a-las-posiciones-de-una-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Acceder a las posiciones de una matriz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-recorrer-arrays-bidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5. Recorrer arrays bidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-iniciacion-procedural-de-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6. Iniciación procedural de matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-recorrido-de-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7. Recorrido de matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-busqueda-en-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8. Búsqueda en matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-arrays-de-mas-de-dos-dimensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9. Arrays de más de dos dimensiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510-ejemplo-practico-almacenar-temperaturas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10. Ejemplo práctico: almacenar temperaturas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-apartado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del apartado
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h1>
+<h2 id="1-declaracion-e-inicializacion-de-arrays">1. Declaración e inicialización de arrays<a class="headerlink" href="#1-declaracion-e-inicializacion-de-arrays" title="Permanent link">&para;</a></h2>
+<p>Un <strong>array</strong> es una estructura que permite almacenar varios valores del mismo tipo de dato utilizando un único identificador.</p>
+<p>Cada valor se guarda en una posición diferente y estas posiciones siguen un orden numérico.</p>
+<p>A efectos prácticos, cada posición individual de un array se comporta como una variable del tipo de dato elegido.</p>
+<p>Con un array podemos:</p>
+<ul>
+<li>Consultar el valor almacenado en una posición.</li>
+<li>Guardar nuevos datos en sus diferentes posiciones.</li>
+<li>Acceder a cada elemento utilizando su índice.</li>
+</ul>
+<h3 id="11-declaracion-de-un-array">1.1. Declaración de un array<a class="headerlink" href="#11-declaracion-de-un-array" title="Permanent link">&para;</a></h3>
+<p>Para utilizar un array en Java, primero debemos declararlo e inicializarlo.</p>
+<p>La declaración indica qué tipo de datos vamos a almacenar y qué nombre tendrá el array.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int[] arrayEnters;
+</code></pre>
+<p>En este caso hemos declarado un array llamado <code>arrayEnters</code> que podrá almacenar números enteros (<code>int</code>).</p>
+<p>También podemos declarar arrays de otros tipos de datos:</p>
+<pre><code class="language-java">int[] arrayEnters;
+double[] arrayReals;
+float[] arrayDecimals;
+char[] arrayCaracters;
+String[] arrayCadenes;
+</code></pre>
+<h3 id="12-inicializacion-de-un-array">1.2. Inicialización de un array<a class="headerlink" href="#12-inicializacion-de-un-array" title="Permanent link">&para;</a></h3>
+<p>Antes de utilizar un array es obligatorio inicializarlo.</p>
+<p>En Java, cuando inicializamos un array, su tamaño debe ser conocido. Una vez creado con un número determinado de posiciones, su tamaño ya no puede cambiar.</p>
+<p>Existen diferentes formas de inicializar un array.</p>
+<p><strong>Inicialización con valores concretos</strong></p>
+<p>Podemos crear un array indicando directamente los valores que queremos almacenar.</p>
+<p>Sintaxis:</p>
+<pre><code class="language-java">tipoDato[] nombreArray = {valor1, valor2, valor3};
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[] arrayEnters = {10, 20, 30, 40, 50};
+</code></pre>
+<p>En este caso hemos creado un array de números enteros con cinco posiciones.</p>
+<p>Cada posición contiene uno de los valores indicados.</p>
+<p><strong>Inicialización con valores por defecto</strong></p>
+<p>También podemos crear un array indicando únicamente el número de posiciones que queremos reservar.</p>
+<p>Sintaxis:</p>
+<pre><code class="language-java">tipoDato[] nombreArray = new tipoDato[tamaño];
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-java">double[] arrayReals = new double[10];
+</code></pre>
+<p>En este caso hemos creado un array de tipo <code>double</code> con diez posiciones.</p>
+<p>Java inicializa automáticamente sus elementos con el valor por defecto correspondiente al tipo de dato.</p>
+<p>Los valores por defecto son:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de dato</th>
+<th>Valor por defecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>double</code>, <code>float</code></td>
+<td><code>0.0</code></td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>String</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>Objetos en general</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, las siguientes instrucciones son equivalentes:</p>
+<pre><code class="language-java">double[] arrayReals = new double[10];
+</code></pre>
+<pre><code class="language-java">double[] arrayReals = {
+    0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0
+};
+</code></pre>
+<h3 id="13-inicializacion-de-todos-los-elementos-con-un-mismo-valor">1.3. Inicialización de todos los elementos con un mismo valor<a class="headerlink" href="#13-inicializacion-de-todos-los-elementos-con-un-mismo-valor" title="Permanent link">&para;</a></h3>
+<p>También podemos inicializar un array asignando el mismo valor a todas sus posiciones mediante un bucle <code>for</code>.</p>
+<p>Por ejemplo, vamos a crear un array de 30 números enteros y asignar el valor 7 a todos sus elementos.</p>
+<pre><code class="language-java">int[] arrayEnters2 = new int[30];
+
+for (int i = 0; i &lt; arrayEnters2.length; i++) {
+    arrayEnters2[i] = 7;
+}
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li>Creamos un array de 30 posiciones.</li>
+<li>Utilizamos un bucle <code>for</code> para recorrer todas sus posiciones.</li>
+<li>Asignamos el valor 7 a cada posición.</li>
+</ul>
+<p>Para mostrar su contenido podemos utilizar otro bucle:</p>
+<pre><code class="language-java">for (int i = 0; i &lt; arrayEnters2.length; i++) {
+    System.out.println(i + &quot;: &quot; + arrayEnters2[i]);
+}
+</code></pre>
+<p>El resultado mostrará las posiciones del array y el valor almacenado en cada una.</p>
+<h3 id="14-consideraciones-sobre-la-inicializacion">1.4. Consideraciones sobre la inicialización<a class="headerlink" href="#14-consideraciones-sobre-la-inicializacion" title="Permanent link">&para;</a></h3>
+<p>Debemos tener en cuenta algunas características de los arrays en Java:</p>
+<ul>
+<li>Antes de utilizar un array es obligatorio inicializarlo.</li>
+<li>Cuando se crea un array, su tamaño debe estar definido.</li>
+<li>Una vez inicializado, el tamaño del array no puede cambiar.</li>
+<li>Cada posición almacena un valor del tipo de dato declarado.</li>
+<li>Si utilizamos <code>new</code>, Java asigna automáticamente los valores por defecto.</li>
+</ul>
+<hr />
+<p><a href="#2-manipulacion-de-datos-dentro-de-arrays">Siguiente apartado: Manipulación de datos dentro de arrays</a></p>
+<h2 id="2-manipulacion-de-datos-dentro-de-arrays">2. Manipulación de datos dentro de arrays<a class="headerlink" href="#2-manipulacion-de-datos-dentro-de-arrays" title="Permanent link">&para;</a></h2>
+<p>Los arrays tienen algunas particularidades a la hora de trabajar con ellos. A diferencia de las variables normales, no podemos realizar operaciones directamente sobre un array completo.</p>
+<p>Por ejemplo, en Java no podemos sumar dos arrays utilizando directamente el operador <code>+</code>.</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+int[] arrayB = {50, 60, 70, 80, 100};
+
+// Esta operación no es válida:
+int[] arrayC = arrayA + arrayB;
+</code></pre>
+<p>Esta operación produce un error de compilación.</p>
+<p>Para trabajar con los datos almacenados en un array debemos manipularlos individualmente, posición por posición.</p>
+<p>Cada posición se comporta como una variable del tipo de dato elegido, por lo que podemos consultar su valor y almacenar nuevos datos.</p>
+<h3 id="21-acceder-a-las-posiciones-de-un-array-indices">2.1. Acceder a las posiciones de un array: índices<a class="headerlink" href="#21-acceder-a-las-posiciones-de-un-array-indices" title="Permanent link">&para;</a></h3>
+<p>Para acceder a un elemento de un array utilizamos un número entero llamado <strong>índice</strong>.</p>
+<p>El índice indica la posición que ocupa un elemento dentro del array.</p>
+<p>La sintaxis es:</p>
+<pre><code class="language-java">nombreArray[indice]
+</code></pre>
+<p>En Java, los índices comienzan siempre en 0:</p>
+<ul>
+<li>Primera posición: índice 0.</li>
+<li>Segunda posición: índice 1.</li>
+<li>Tercera posición: índice 2.</li>
+<li>Última posición: tamaño del array menos 1.</li>
+</ul>
+<p>Por ejemplo, tenemos el siguiente array:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+</code></pre>
+<p>Su distribución sería:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Índice</th>
+<th style="text-align: right;">Valor almacenado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">50</td>
+</tr>
+</tbody>
+</table>
+<p>Para consultar un elemento podemos escribir:</p>
+<pre><code class="language-java">System.out.println(arrayA[0]);
+System.out.println(arrayA[2]);
+System.out.println(arrayA[4]);
+</code></pre>
+<p>El resultado será:</p>
+<pre><code class="language-text">10
+30
+50
+</code></pre>
+<h3 id="22-modificar-los-elementos-de-un-array">2.2. Modificar los elementos de un array<a class="headerlink" href="#22-modificar-los-elementos-de-un-array" title="Permanent link">&para;</a></h3>
+<p>También podemos cambiar el valor almacenado en una posición concreta utilizando el operador de asignación <code>=</code>.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+
+// Modificamos el valor de la posición 2
+arrayA[2] = 100;
+
+System.out.println(arrayA[2]);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">100
+</code></pre>
+<p>El valor anterior, que era 30, ha sido sustituido por 100.</p>
+<h3 id="23-realizar-operaciones-con-elementos-de-diferentes-arrays">2.3. Realizar operaciones con elementos de diferentes arrays<a class="headerlink" href="#23-realizar-operaciones-con-elementos-de-diferentes-arrays" title="Permanent link">&para;</a></h3>
+<p>Podemos consultar elementos de distintos arrays y realizar operaciones con ellos.</p>
+<p>Para ello debemos indicar las posiciones concretas que queremos utilizar.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+int[] arrayB = {50, 60, 70, 80, 100};
+int[] arrayC = new int[5];
+
+// La variable r tendrá el valor 140
+int r = arrayA[3] + arrayB[4];
+
+// Guardamos el resultado en la segunda posición de arrayC
+arrayC[1] = r + arrayA[0];
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li><code>arrayA[3]</code> contiene el valor 40.</li>
+<li><code>arrayB[4]</code> contiene el valor 100.</li>
+<li>La variable <code>r</code> almacena el resultado de sumar 40 + 100, que es 140.</li>
+<li><code>arrayA[0]</code> contiene el valor 10.</li>
+<li><code>arrayC[1]</code> almacena el resultado de sumar 140 + 10, que es 150.</li>
+</ul>
+<p>Por tanto, el valor de la segunda posición de <code>arrayC</code> será 150.</p>
+<h3 id="24-errores-al-acceder-a-las-posiciones">2.4. Errores al acceder a las posiciones<a class="headerlink" href="#24-errores-al-acceder-a-las-posiciones" title="Permanent link">&para;</a></h3>
+<p>Debemos tener cuidado al consultar o modificar las posiciones de un array.</p>
+<p>No podemos utilizar índices negativos ni índices iguales o superiores al tamaño del array.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+
+// El array tiene 5 posiciones.
+// Los índices válidos van de 0 a 4.
+
+// Esta asignación es incorrecta:
+arrayA[5] = 60;
+
+// Esta consulta también es incorrecta:
+int r = arrayA[2] + arrayA[4] + arrayA[6];
+</code></pre>
+<p>En ambos casos se intenta acceder a posiciones que no existen.</p>
+<p>Al ejecutar estas instrucciones se puede producir una excepción llamada:</p>
+<p><code>IndexOutOfBoundsException</code></p>
+<p>Este error aparece cuando intentamos acceder a una posición que está fuera de los límites permitidos.</p>
+<h3 id="25-atributo-length">2.5. Atributo <code>length</code><a class="headerlink" href="#25-atributo-length" title="Permanent link">&para;</a></h3>
+<p>Para evitar errores al recorrer un array o acceder a sus posiciones, podemos utilizar el atributo <code>length</code>.</p>
+<p>Este atributo permite conocer el número total de elementos que contiene un array.</p>
+<p>La sintaxis es:</p>
+<pre><code class="language-java">nombreArray.length
+</code></pre>
+<p>Hay que recordar que <code>length</code> no lleva paréntesis.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+
+System.out.println(arrayA.length);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">5
+</code></pre>
+<p>Aunque el tamaño del array es 5, su último índice es 4, porque las posiciones comienzan en 0.</p>
+<p>Podemos utilizar <code>length</code> para comprobar si una posición existe antes de acceder a ella.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+
+int index = 6;
+
+if (index &lt; arrayA.length) {
+
+    System.out.println(&quot;La posición &quot; + index + &quot; vale &quot; + arrayA[index]);
+
+} else {
+
+    System.out.println(&quot;Este array no tiene tantas posiciones!&quot;);
+
+}
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">Este array no tiene tantas posiciones!
+</code></pre>
+<p>En este caso, el índice 6 no es válido porque el array solamente tiene cinco posiciones.</p>
+<h3 id="26-recorrer-un-array">2.6. Recorrer un array<a class="headerlink" href="#26-recorrer-un-array" title="Permanent link">&para;</a></h3>
+<p>Para consultar todos los elementos de un array podemos utilizar un bucle <code>for</code>.</p>
+<p>El contador del bucle nos permite acceder a cada posición siguiendo el orden de sus índices.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+
+for (int i = 0; i &lt; arrayA.length; i++) {
+
+    System.out.println(arrayA[i]);
+
+}
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">10
+20
+30
+40
+50
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li>El contador <code>i</code> comienza en 0.</li>
+<li>La condición comprueba que <code>i</code> sea inferior al tamaño del array.</li>
+<li>En cada repetición mostramos el elemento situado en la posición <code>i</code>.</li>
+<li>El contador aumenta una unidad.</li>
+<li>Cuando <code>i</code> alcanza el valor 5, el bucle termina.</li>
+</ul>
+<p>Utilizar <code>arrayA.length</code> permite adaptar el recorrido al tamaño del array sin tener que escribir manualmente el número de posiciones.</p>
+<hr />
+<p><a href="#1-declaracion-e-inicializacion-de-arrays">Volver al apartado anterior</a></p>
+<p><a href="#3-almacenamiento-de-la-entrada-de-datos-en-un-array">Siguiente apartado: Almacenamiento de la entrada de datos en un array</a></p>
+<h2 id="3-almacenamiento-de-la-entrada-de-datos-en-un-array">3. Almacenamiento de la entrada de datos en un array<a class="headerlink" href="#3-almacenamiento-de-la-entrada-de-datos-en-un-array" title="Permanent link">&para;</a></h2>
+<p>En muchas ocasiones necesitamos almacenar varios datos introducidos por el usuario dentro de un array.</p>
+<p>Para realizar esta operación utilizamos la clase <code>Scanner</code> junto con un bucle que permita leer los diferentes valores y guardarlos en las posiciones correspondientes.</p>
+<p>Antes de empezar debemos tener en cuenta que el tamaño de un array se establece cuando lo creamos y no puede modificarse posteriormente.</p>
+<h3 id="31-leer-varios-valores-utilizando-scanner">3.1. Leer varios valores utilizando Scanner<a class="headerlink" href="#31-leer-varios-valores-utilizando-scanner" title="Permanent link">&para;</a></h3>
+<p>Cuando utilizamos una instrucción como <code>nextInt()</code>, <code>nextDouble()</code> o <code>nextLong()</code>, el programa se detiene esperando que el usuario introduzca datos por teclado.</p>
+<p>Sin embargo, el usuario puede introducir varios valores antes de pulsar la tecla Enter.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">10 20 30 40 50
+</code></pre>
+<p>En este caso, los valores están separados por espacios y <code>Scanner</code> puede identificarlos individualmente.</p>
+<p>Cuando introducimos varios valores en una misma línea, estos quedan pendientes de lectura.</p>
+<p>Las siguientes llamadas a los métodos <code>next...()</code> irán recogiendo los valores pendientes sin necesidad de volver a esperar una nueva entrada del usuario.</p>
+<p>Cuando se han leído todos los valores introducidos, el programa volverá a esperar una nueva entrada por teclado.</p>
+<h3 id="32-comprobar-el-tipo-de-dato-introducido">3.2. Comprobar el tipo de dato introducido<a class="headerlink" href="#32-comprobar-el-tipo-de-dato-introducido" title="Permanent link">&para;</a></h3>
+<p>Cuando leemos varios valores por teclado, debemos tener en cuenta que el usuario puede introducir datos de diferentes tipos.</p>
+<p>Esto puede ocurrir por un error al escribir o porque el programa realmente espera una secuencia de valores de distintos tipos.</p>
+<p>Antes de realizar una lectura podemos comprobar si el siguiente dato es del tipo que necesitamos.</p>
+<p>Para ello utilizamos los métodos <code>hasNext...()</code> de la clase <code>Scanner</code>.</p>
+<p>Algunos ejemplos son:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Tipo de dato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hasNextInt()</code></td>
+<td>Número entero</td>
+</tr>
+<tr>
+<td><code>hasNextDouble()</code></td>
+<td>Número real</td>
+</tr>
+<tr>
+<td><code>hasNextLong()</code></td>
+<td>Número entero de tipo long</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<pre><code class="language-java">if (entrada.hasNextInt()) {
+    int numero = entrada.nextInt();
+} else {
+    System.out.println(&quot;El dato introducido no es un entero&quot;);
+}
+</code></pre>
+<p>De esta manera podemos comprobar el tipo de dato antes de intentar leerlo.</p>
+<h3 id="33-leer-una-cantidad-conocida-de-datos">3.3. Leer una cantidad conocida de datos<a class="headerlink" href="#33-leer-una-cantidad-conocida-de-datos" title="Permanent link">&para;</a></h3>
+<p>Cuando conocemos previamente cuántos valores vamos a almacenar, podemos utilizar un array de tamaño fijo y un bucle con contador.</p>
+<p>El tamaño del array debe establecerse antes de comenzar a guardar los datos.</p>
+<p>Por ejemplo, si queremos almacenar cinco números enteros:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class EntradaValoresConocidos {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int[] numeros = new int[5];
+
+        for (int i = 0; i &lt; numeros.length; i++) {
+
+            System.out.print(&quot;Introduce un número: &quot;);
+
+            numeros[i] = entrada.nextInt();
+        }
+
+        System.out.println(&quot;Los números introducidos son:&quot;);
+
+        for (int i = 0; i &lt; numeros.length; i++) {
+
+            System.out.println(numeros[i]);
+        }
+    }
+}
+</code></pre>
+<p>En este ejemplo:</p>
+<ol>
+<li>Creamos un array de cinco posiciones.</li>
+<li>Utilizamos un bucle <code>for</code> para recorrer todas las posiciones.</li>
+<li>Pedimos un número al usuario en cada repetición.</li>
+<li>Guardamos el número directamente en la posición correspondiente.</li>
+<li>Al terminar, recorremos el array para mostrar todos los valores.</li>
+</ol>
+<p>De esta manera, cada número queda almacenado en una posición diferente.</p>
+<h3 id="34-leer-una-cantidad-desconocida-de-datos">3.4. Leer una cantidad desconocida de datos<a class="headerlink" href="#34-leer-una-cantidad-desconocida-de-datos" title="Permanent link">&para;</a></h3>
+<p>En otras ocasiones no conocemos previamente cuántos valores va a introducir el usuario.</p>
+<p>En estos casos podemos utilizar dos posibilidades:</p>
+<ul>
+<li>Hacer que el primer dato introducido indique cuántos valores se van a guardar.</li>
+<li>Utilizar un valor especial para indicar que hemos terminado de introducir datos.</li>
+</ul>
+<p><strong>Primera opción: indicar la cantidad de datos</strong></p>
+<p>El usuario introduce primero un número que indica cuántos valores quiere almacenar.</p>
+<p>Por ejemplo, si introduce el valor 4, el programa reservará cuatro posiciones y solicitará cuatro números.</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class EntradaCantidadDatos {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print(&quot;¿Cuántos números quieres introducir? &quot;);
+
+        int cantidad = entrada.nextInt();
+
+        int[] numeros = new int[cantidad];
+
+        for (int i = 0; i &lt; numeros.length; i++) {
+
+            System.out.print(&quot;Introduce un número: &quot;);
+
+            numeros[i] = entrada.nextInt();
+        }
+
+        System.out.println(&quot;Valores introducidos:&quot;);
+
+        for (int i = 0; i &lt; numeros.length; i++) {
+
+            System.out.println(numeros[i]);
+        }
+    }
+}
+</code></pre>
+<p>En este ejemplo, el tamaño del array depende de la cantidad indicada por el usuario.</p>
+<p><strong>Segunda opción: utilizar una marca de final de secuencia</strong></p>
+<p>Otra posibilidad consiste en permitir que el usuario introduzca valores hasta que escriba un número especial que indique que ha terminado.</p>
+<p>Este valor se conoce como <strong>marca de final de secuencia</strong>.</p>
+<p>La marca debe cumplir dos condiciones:</p>
+<ul>
+<li>Debe ser un valor único.</li>
+<li>No puede aparecer entre los valores que queremos almacenar.</li>
+</ul>
+<p>Para controlar cuándo termina la entrada podemos utilizar un semáforo booleano.</p>
+<p>Por ejemplo, podemos utilizar el valor <code>-1</code> como marca de final, siempre que no necesitemos almacenar números negativos.</p>
+<p>La variable booleana indicará si se ha encontrado la marca de final de secuencia.</p>
+<h3 id="35-almacenar-datos-en-arrays-parcialmente-ocupados">3.5. Almacenar datos en arrays parcialmente ocupados<a class="headerlink" href="#35-almacenar-datos-en-arrays-parcialmente-ocupados" title="Permanent link">&para;</a></h3>
+<p>Cuando no conocemos cuántos datos va a introducir el usuario, podemos encontrarnos con un problema: el tamaño de los arrays no puede cambiar una vez creados.</p>
+<p>Una solución consiste en elegir previamente un tamaño máximo para el array.</p>
+<p>Por ejemplo, podemos crear un array de 100 posiciones aunque el usuario solamente introduzca 20 valores.</p>
+<p>En ese caso tendremos un array parcialmente ocupado.</p>
+<p>Esto significa que algunas posiciones contienen datos introducidos por el usuario y otras todavía no se han utilizado.</p>
+<p>Debemos tener en cuenta que:</p>
+<ul>
+<li>No podemos conocer siempre la cantidad total de datos que se introducirán.</li>
+<li>Si se introducen más datos de los que permite el array, los datos adicionales se ignoran.</li>
+<li>Debemos elegir un tamaño que permita almacenar suficientes valores.</li>
+<li>Tampoco debemos reservar una cantidad excesiva de memoria sin necesidad.</li>
+</ul>
+<p>Por tanto, debemos buscar un equilibrio entre disponer de suficientes posiciones y no desperdiciar memoria.</p>
+<hr />
+<p><a href="#4-esquemas-fundamentales-en-la-utilizacion-de-arrays">Siguiente apartado: Esquemas fundamentales en la utilización de arrays</a></p>
+<h2 id="4-esquemas-fundamentales-en-la-utilizacion-de-arrays">4. Esquemas fundamentales en la utilización de arrays<a class="headerlink" href="#4-esquemas-fundamentales-en-la-utilizacion-de-arrays" title="Permanent link">&para;</a></h2>
+<p>Para trabajar con arrays existen diferentes estrategias que nos permiten organizar las operaciones y resolver problemas habituales de programación.</p>
+<p>Estas estrategias utilizan principalmente bucles, índices y contadores para recorrer, consultar, modificar y ordenar los elementos almacenados.</p>
+<p>El profesor presenta siete estrategias fundamentales:</p>
+<ul>
+<li>Iniciación procedural.</li>
+<li>Recorrido.</li>
+<li>Búsqueda.</li>
+<li>Arrays auxiliares.</li>
+<li>Copia.</li>
+<li>Cambio de tamaño.</li>
+<li>Ordenación.</li>
+</ul>
+<h3 id="41-iniciacion-procedural">4.1. Iniciación procedural<a class="headerlink" href="#41-iniciacion-procedural" title="Permanent link">&para;</a></h3>
+<p>La <strong>generación procedural</strong> consiste en generar el contenido de un array mediante instrucciones y operaciones, en lugar de introducir manualmente todos sus valores.</p>
+<p>Esta técnica permite crear arrays cuyos elementos siguen un patrón determinado.</p>
+<p>Se utiliza especialmente en el diseño de videojuegos, aunque también podemos aplicarla en otros programas.</p>
+<p><strong>Ejemplo 01: generar un array con el doble del valor anterior</strong></p>
+<p>El ejercicio consiste en inicializar un array de 15 elementos de manera que cada posición tenga el doble del valor de la posición anterior.</p>
+<p>El primer elemento tendrá el valor 1.</p>
+<p>El resultado esperado es:</p>
+<pre><code class="language-text">[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384]
+</code></pre>
+<p>Podemos resolverlo utilizando un bucle <code>for</code>:</p>
+<pre><code class="language-java">int[] arrayNumeros = new int[15];
+
+arrayNumeros[0] = 1;
+
+for (int i = 1; i &lt; arrayNumeros.length; i++) {
+
+    arrayNumeros[i] = arrayNumeros[i - 1] * 2;
+
+}
+
+System.out.println(&quot;Elementos del array:&quot;);
+
+for (int i = 0; i &lt; arrayNumeros.length; i++) {
+
+    System.out.println(arrayNumeros[i]);
+
+}
+</code></pre>
+<p>En este ejemplo:</p>
+<ol>
+<li>Creamos un array de 15 posiciones.</li>
+<li>Asignamos el valor 1 a la primera posición.</li>
+<li>Recorremos el resto de posiciones mediante un bucle.</li>
+<li>Multiplicamos por 2 el valor de la posición anterior.</li>
+<li>Guardamos el resultado en la posición actual.</li>
+</ol>
+<p>De esta manera generamos todos los valores automáticamente.</p>
+<h3 id="42-recorrido">4.2. Recorrido<a class="headerlink" href="#42-recorrido" title="Permanent link">&para;</a></h3>
+<p>El <strong>recorrido de un array</strong> consiste en visitar sus posiciones de forma secuencial para realizar operaciones con todos o parte de los valores almacenados.</p>
+<p>Normalmente utilizamos un bucle <code>for</code> para recorrer los elementos y realizar los cálculos necesarios.</p>
+<p>Entre las operaciones que podemos realizar encontramos:</p>
+<ul>
+<li>Sumar todos los elementos.</li>
+<li>Calcular una media.</li>
+<li>Contar determinados valores.</li>
+<li>Buscar el valor mayor o menor.</li>
+<li>Comprobar si se cumple una condición.</li>
+</ul>
+<p><strong>Ejemplo 02: calcular la nota media</strong></p>
+<p>Partimos del siguiente array de notas:</p>
+<pre><code class="language-java">float[] arrayNotas = {
+    4.9f, 5.5f, 9f, 10f, 6.7f, 8.2f,
+    7.5f, 5f, 8.3f, 5.1f, 9f, 7f
+};
+</code></pre>
+<p>El ejercicio consiste en calcular la nota media de todos los alumnos y mostrar el resultado.</p>
+<p>Para hacerlo debemos sumar todas las notas y dividir el resultado entre la cantidad de elementos del array.</p>
+<pre><code class="language-java">float[] arrayNotas = {
+    4.9f, 5.5f, 9f, 10f, 6.7f, 8.2f,
+    7.5f, 5f, 8.3f, 5.1f, 9f, 7f
+};
+
+float suma = 0;
+
+for (int i = 0; i &lt; arrayNotas.length; i++) {
+
+    suma = suma + arrayNotas[i];
+
+}
+
+float media = suma / arrayNotas.length;
+
+System.out.println(&quot;La nota media es: &quot; + media);
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li><code>suma</code> es un acumulador que guarda la suma de las notas.</li>
+<li>El bucle <code>for</code> recorre todas las posiciones.</li>
+<li><code>arrayNotas[i]</code> permite consultar cada nota.</li>
+<li><code>arrayNotas.length</code> indica cuántas notas tenemos.</li>
+<li>Finalmente dividimos la suma entre el número de notas.</li>
+</ul>
+<p><strong>Modificación propuesta por el profesor:</strong></p>
+<p>En lugar de utilizar un array con notas inicializadas previamente, debemos pedir las notas al usuario y almacenarlas en el array antes de calcular la media.</p>
+<h3 id="43-busqueda">4.3. Búsqueda<a class="headerlink" href="#43-busqueda" title="Permanent link">&para;</a></h3>
+<p>La <strong>búsqueda</strong> consiste en localizar un valor concreto dentro de un array.</p>
+<p>Para realizarla debemos recorrer las posiciones hasta encontrar el elemento que estamos buscando.</p>
+<p>El funcionamiento general es:</p>
+<ol>
+<li>Comenzamos a recorrer el array.</li>
+<li>Comparamos cada elemento con el valor que queremos encontrar.</li>
+<li>Cuando encontramos el valor, detenemos el recorrido.</li>
+<li>Si llegamos al final del array sin encontrarlo, significa que el elemento no existe.</li>
+</ol>
+<p>Podemos utilizar una variable booleana para indicar si hemos encontrado el valor.</p>
+<p><strong>Ejemplo 03: buscar una nota de 10</strong></p>
+<p>El profesor propone trabajar con los siguientes arrays de notas:</p>
+<pre><code class="language-java">float[] arrayNotas = {
+    2f, 5.5f, 9f, 10f, 4.9f, 8f,
+    8.5f, 7f, 6.6f, 5f, 9f, 7f
+};
+</code></pre>
+<p>El objetivo es comprobar si algún alumno ha obtenido un 10 y mostrar un mensaje indicando si se ha encontrado alguna nota con ese valor.</p>
+<pre><code class="language-java">float[] arrayNotas = {
+    2f, 5.5f, 9f, 10f, 4.9f, 8f,
+    8.5f, 7f, 6.6f, 5f, 9f, 7f
+};
+
+boolean encontrado = false;
+
+for (int i = 0; i &lt; arrayNotas.length &amp;&amp; !encontrado; i++) {
+
+    if (arrayNotas[i] == 10f) {
+
+        encontrado = true;
+
+    }
+
+}
+
+if (encontrado) {
+
+    System.out.println(&quot;Se ha encontrado una nota de 10&quot;);
+
+} else {
+
+    System.out.println(&quot;No se ha encontrado ninguna nota de 10&quot;);
+
+}
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li>Inicializamos la variable <code>encontrado</code> con el valor <code>false</code>.</li>
+<li>Recorremos el array mientras no hayamos encontrado el valor.</li>
+<li>Comparamos cada nota con 10.</li>
+<li>Si encontramos una nota igual a 10, cambiamos <code>encontrado</code> a <code>true</code>.</li>
+<li>Al terminar, mostramos el mensaje correspondiente.</li>
+</ul>
+<p><strong>Modificaciones propuestas por el profesor:</strong></p>
+<p>Comprobar también si algún alumno ha suspendido.</p>
+<p>Para probar diferentes situaciones se proponen otros arrays:</p>
+<pre><code class="language-java">float[] arrayNotas = {
+    2f, 5.5f, 9f, 8f, 7f, 8f,
+    8.5f, 7f, 6.6f, 5f, 9f, 7f
+};
+</code></pre>
+<pre><code class="language-java">float[] arrayNotas = {
+    6f, 5.5f, 9f, 8f, 7f, 8f,
+    10f, 7f, 6.6f, 5f, 9f, 7f
+};
+</code></pre>
+<p><strong>Ejemplo 04: buscar un carácter</strong></p>
+<p>En este ejercicio debemos crear un array de 10 caracteres:</p>
+<pre><code class="language-java">char[] arrayCaracteres = {
+    'a', '0', 'g', ';', 'w',
+    'o', 'h', '+', 'x', 's'
+};
+</code></pre>
+<p>El programa debe solicitar al usuario un carácter que quiera buscar dentro del array.</p>
+<p>También debe comprobar que el usuario introduce exactamente un carácter.</p>
+<p>Si introduce más de uno o deja la entrada vacía, deberá volver a solicitarlo.</p>
+<p>Una vez obtenido el carácter correcto, el programa recorrerá el array y mostrará:</p>
+<ul>
+<li>Si el carácter se ha encontrado.</li>
+<li>La posición en la que se encuentra.</li>
+</ul>
+<p><strong>Modificación propuesta por el profesor:</strong></p>
+<p>Permitir que el usuario introduzca un carácter hasta que sea válido y mostrar todas las posiciones en las que aparece si está repetido.</p>
+<h3 id="44-arrays-auxiliares">4.4. Arrays auxiliares<a class="headerlink" href="#44-arrays-auxiliares" title="Permanent link">&para;</a></h3>
+<p>Podemos utilizar arrays auxiliares para almacenar diferentes valores relacionados con los datos de otro array.</p>
+<p>De esta manera podemos guardar muchos valores diferentes utilizando un único identificador para cada conjunto de datos.</p>
+<p><strong>Ejemplo 05: contar alumnos según sus notas</strong></p>
+<p>Partimos del siguiente array:</p>
+<pre><code class="language-java">float[] arrayNotas = {
+    4.9f, 5.5f, 9f, 10f, 6.7f, 8.2f,
+    7.5f, 5f, 8.3f, 5.1f, 9f, 7f
+};
+</code></pre>
+<p>El ejercicio consiste en crear un gráfico que muestre cuántos alumnos hay en cada categoría:</p>
+<ul>
+<li>Suspenso.</li>
+<li>Aprobado.</li>
+<li>Bien.</li>
+<li>Notable.</li>
+<li>Excelente.</li>
+</ul>
+<p>Para resolverlo utilizaremos un array auxiliar que almacenará los contadores de cada categoría.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int[] contadores = new int[5];
+</code></pre>
+<p>Cada posición del array auxiliar representará una categoría:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Posición</th>
+<th>Categoría</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td>Suspenso</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Aprobado</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Bien</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Notable</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Excelente</td>
+</tr>
+</tbody>
+</table>
+<p>Después recorreremos el array de notas y aumentaremos el contador correspondiente según la nota de cada alumno.</p>
+<p><strong>Modificación propuesta por el profesor:</strong></p>
+<p>Crear un array de 100 elementos e introducir valores de notas aleatoriamente para realizar el mismo ejercicio.</p>
+<h3 id="45-copia-de-arrays">4.5. Copia de arrays<a class="headerlink" href="#45-copia-de-arrays" title="Permanent link">&para;</a></h3>
+<p>En Java podemos asignar una variable de tipo array a otra variable del mismo tipo.</p>
+<p>Sin embargo, debemos tener cuidado porque esta operación no crea una copia independiente de los datos.</p>
+<p><strong>Asignación de un array a otro</strong></p>
+<p>Observa el siguiente ejemplo:</p>
+<pre><code class="language-java">int[] arrayA = {10, 20, 30, 40, 50};
+
+System.out.println(&quot;Array A: &quot; + arrayA);
+
+int[] arrayB = {60, 70, 80, 90, 100};
+
+System.out.println(&quot;Array B: &quot; + arrayB);
+
+// Asignamos arrayB a arrayA
+arrayA = arrayB;
+
+System.out.println(&quot;Array A: &quot; + arrayA);
+System.out.println(&quot;Array B: &quot; + arrayB);
+</code></pre>
+<p>Cuando hacemos:</p>
+<pre><code class="language-java">arrayA = arrayB;
+</code></pre>
+<p>No estamos copiando los elementos de <code>arrayB</code> dentro de <code>arrayA</code>.</p>
+<p>Lo que sucede es que las dos variables pasan a hacer referencia al mismo array en memoria.</p>
+<p>Por tanto, si modificamos un elemento utilizando cualquiera de las dos variables, el cambio se verá reflejado en ambas.</p>
+<pre><code class="language-java">arrayA[1] = 200;
+
+System.out.println(arrayB[1]);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">200
+</code></pre>
+<p>Además, el array original al que hacía referencia <code>arrayA</code> deja de estar accesible mediante esa variable.</p>
+<p>Java podrá liberar posteriormente esa memoria mediante el recolector de basura (<em>Garbage Collector</em>), si ya no existen otras referencias a ese array.</p>
+<p><strong>Crear una copia independiente</strong></p>
+<p>Si queremos tener dos arrays diferentes con los mismos valores, debemos copiar sus elementos individualmente.</p>
+<p><strong>Ejemplo 06: copiar un array de números enteros</strong></p>
+<p>Partimos del siguiente array:</p>
+<pre><code class="language-java">int[] enters = {45, 3, 74, -34, 12, 20, 66, 43, -101};
+</code></pre>
+<p>El ejercicio consiste en crear otro array llamado <code>copiaEnters</code> que tenga exactamente el mismo contenido, pero que sea independiente del original.</p>
+<p>Podemos hacerlo utilizando un bucle <code>for</code>:</p>
+<pre><code class="language-java">int[] enters = {45, 3, 74, -34, 12, 20, 66, 43, -101};
+
+int[] copiaEnters = new int[enters.length];
+
+for (int i = 0; i &lt; enters.length; i++) {
+
+    copiaEnters[i] = enters[i];
+
+}
+</code></pre>
+<p>En este caso:</p>
+<ol>
+<li>Creamos un nuevo array con el mismo tamaño que el original.</li>
+<li>Recorremos todas las posiciones del array original.</li>
+<li>Copiamos cada elemento en la misma posición del nuevo array.</li>
+</ol>
+<p>Ahora tenemos dos arrays independientes.</p>
+<p>Si modificamos un elemento de uno de ellos, el otro no cambiará.</p>
+<h3 id="46-cambio-de-tamano-de-un-array">4.6. Cambio de tamaño de un array<a class="headerlink" href="#46-cambio-de-tamano-de-un-array" title="Permanent link">&para;</a></h3>
+<p>Una vez creado un array, su tamaño no puede modificarse directamente.</p>
+<p>Sin embargo, en algunas situaciones podemos necesitar más espacio para almacenar nuevos datos.</p>
+<p>Para solucionar este problema podemos crear otro array de mayor tamaño y copiar los elementos del array original.</p>
+<p>El procedimiento es el siguiente:</p>
+<ol>
+<li>Crear un nuevo array con un tamaño superior al original.</li>
+<li>Copiar los datos del array original manteniendo el mismo orden.</li>
+<li>Asignar el nuevo array a la variable que utilizábamos anteriormente.</li>
+<li>Añadir los nuevos valores en las posiciones disponibles.</li>
+</ol>
+<p><strong>Ejemplo: ampliar el tamaño de un array</strong></p>
+<p>Supongamos que tenemos un array de notas y queremos reservar espacio para 10 valores adicionales.</p>
+<pre><code class="language-java">int MAX_VALORES = 10;
+
+float[] arrayNotas = {5.5f, 7f, 8.5f, 6f};
+
+// PASO 1: crear un array nuevo de mayor tamaño
+
+float[] arrayNuevo = new float[arrayNotas.length + MAX_VALORES];
+
+// PASO 2: copiar los datos del array original
+
+for (int i = 0; i &lt; arrayNotas.length; i++) {
+
+    arrayNuevo[i] = arrayNotas[i];
+
+}
+
+// Las posiciones adicionales tienen el valor 0.0
+
+// PASO 3: asignar el nuevo array a la variable original
+
+arrayNotas = arrayNuevo;
+
+// PASO 4: ahora podemos añadir nuevos valores
+
+arrayNotas[4] = 9f;
+arrayNotas[5] = 7.5f;
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li>El array original tenía cuatro posiciones.</li>
+<li>Creamos otro array con catorce posiciones.</li>
+<li>Copiamos los cuatro valores originales.</li>
+<li>Las diez posiciones adicionales quedan disponibles.</li>
+<li>Asignamos el nuevo array a <code>arrayNotas</code>.</li>
+</ul>
+<p>Debemos tener en cuenta que cambiar el tamaño de un array de esta manera supone crear otro array y copiar todos sus elementos.</p>
+<p>Esta operación puede afectar al rendimiento del programa.</p>
+<p>Por eso, es recomendable elegir un tamaño inicial adecuado y evitar tener que ampliar el array constantemente.</p>
+<h3 id="47-ordenacion-de-arrays">4.7. Ordenación de arrays<a class="headerlink" href="#47-ordenacion-de-arrays" title="Permanent link">&para;</a></h3>
+<p>La <strong>ordenación</strong> consiste en reorganizar los elementos de un array siguiendo un orden determinado.</p>
+<p>Podemos ordenar los valores de forma:</p>
+<ul>
+<li>Ascendente: de menor a mayor.</li>
+<li>Descendente: de mayor a menor.</li>
+</ul>
+<p>La ordenación puede resultar útil para mostrar los datos de forma organizada y facilitar determinadas operaciones de búsqueda.</p>
+<p>Existen diferentes algoritmos de ordenación:</p>
+<ul>
+<li>QuickSort.</li>
+<li>BucketSort.</li>
+<li>SelectionSort (selección).</li>
+<li>BubbleSort (burbuja).</li>
+</ul>
+<p>En los apuntes del profesor se estudian especialmente los algoritmos de selección y burbuja.</p>
+<p><strong>Algoritmo de selección (SelectionSort)</strong></p>
+<p>Este algoritmo utiliza dos bucles <code>for</code> para recorrer el array.</p>
+<p>En cada iteración:</p>
+<ol>
+<li>Se mantiene una posición fija, identificada mediante el índice <code>i</code>.</li>
+<li>Se comparan los valores de las siguientes posiciones utilizando el índice <code>j</code>.</li>
+<li>Se localiza el índice del valor menor.</li>
+<li>Al terminar la búsqueda, se intercambia el valor menor con el de la posición fija.</li>
+</ol>
+<p>De esta manera, el menor valor se coloca en la posición más baja disponible.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[] numeros = {45, 12, 30, 5, 20};
+
+for (int i = 0; i &lt; numeros.length - 1; i++) {
+
+    int indiceMenor = i;
+
+    for (int j = i + 1; j &lt; numeros.length; j++) {
+
+        if (numeros[j] &lt; numeros[indiceMenor]) {
+
+            indiceMenor = j;
+
+        }
+    }
+
+    int auxiliar = numeros[i];
+
+    numeros[i] = numeros[indiceMenor];
+
+    numeros[indiceMenor] = auxiliar;
+}
+</code></pre>
+<p>Al finalizar, el array estará ordenado de menor a mayor:</p>
+<pre><code class="language-text">[5, 12, 20, 30, 45]
+</code></pre>
+<p><strong>Algoritmo de la burbuja (BubbleSort)</strong></p>
+<p>Este algoritmo ordena los elementos comparando parejas de valores que están uno al lado del otro.</p>
+<p>Cuando encuentra dos valores que están en el orden incorrecto, intercambia sus posiciones.</p>
+<p>El funcionamiento es el siguiente:</p>
+<ol>
+<li>Se recorre todo el array comparando parejas de elementos consecutivos.</li>
+<li>Si el primer valor es mayor que el segundo, se intercambian.</li>
+<li>Al terminar el primer recorrido, el valor más alto queda en la última posición.</li>
+<li>En el siguiente recorrido ya no es necesario comprobar esa última posición.</li>
+<li>Se repite el proceso hasta ordenar todos los elementos.</li>
+</ol>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[] numeros = {45, 12, 30, 5, 20};
+
+for (int i = 0; i &lt; numeros.length - 1; i++) {
+
+    for (int j = 0; j &lt; numeros.length - 1 - i; j++) {
+
+        if (numeros[j] &gt; numeros[j + 1]) {
+
+            int auxiliar = numeros[j];
+
+            numeros[j] = numeros[j + 1];
+
+            numeros[j + 1] = auxiliar;
+
+        }
+    }
+}
+</code></pre>
+<p>El resultado será:</p>
+<pre><code class="language-text">[5, 12, 20, 30, 45]
+</code></pre>
+<p><strong>Ejemplo 07: ordenar números enteros</strong></p>
+<p>El profesor propone crear un programa que solicite al usuario 10 números enteros y los almacene en un array.</p>
+<p>Después deberá mostrar:</p>
+<ul>
+<li>El array inicial.</li>
+<li>El array ordenado utilizando el algoritmo de selección.</li>
+<li>El array ordenado utilizando el algoritmo de la burbuja.</li>
+</ul>
+<p><strong>Ejemplo 08: ordenar cadenas de texto</strong></p>
+<p>En este ejercicio debemos solicitar al usuario cinco cadenas de texto e introducirlas en un array.</p>
+<p>Después debemos:</p>
+<ol>
+<li>Mostrar el array inicial.</li>
+<li>Ordenar las cadenas alfabéticamente utilizando el algoritmo de la burbuja.</li>
+<li>Mostrar el array resultante.</li>
+</ol>
+<p>Para comparar dos cadenas de texto alfabéticamente podemos utilizar el método:</p>
+<pre><code class="language-java">cadena1.compareToIgnoreCase(cadena2)
+</code></pre>
+<p>Este método compara las cadenas sin distinguir entre mayúsculas y minúsculas.</p>
+<p>El resultado de la comparación será:</p>
+<ul>
+<li>Un número negativo si la primera cadena precede alfabéticamente a la segunda.</li>
+<li><code>0</code> si las cadenas son iguales.</li>
+<li>Un número positivo si la primera cadena aparece después de la segunda.</li>
+</ul>
+<p>Ejemplo:</p>
+<pre><code class="language-java">String cadena1 = &quot;Manzana&quot;;
+String cadena2 = &quot;Naranja&quot;;
+
+int resultado = cadena1.compareToIgnoreCase(cadena2);
+
+System.out.println(resultado);
+</code></pre>
+<p>En este caso, <code>Manzana</code> aparece antes que <code>Naranja</code> al ordenarlas alfabéticamente.</p>
+<hr />
+<h2 id="resumen-del-apartado">Resumen del apartado<a class="headerlink" href="#resumen-del-apartado" title="Permanent link">&para;</a></h2>
+<p>En este apartado hemos estudiado siete estrategias para trabajar con arrays:</p>
+<table>
+<thead>
+<tr>
+<th>Estrategia</th>
+<th>Utilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Iniciación procedural</td>
+<td>Generar valores automáticamente siguiendo un patrón.</td>
+</tr>
+<tr>
+<td>Recorrido</td>
+<td>Procesar todos o parte de los elementos.</td>
+</tr>
+<tr>
+<td>Búsqueda</td>
+<td>Localizar un valor dentro del array.</td>
+</tr>
+<tr>
+<td>Arrays auxiliares</td>
+<td>Almacenar contadores y otros datos relacionados.</td>
+</tr>
+<tr>
+<td>Copia</td>
+<td>Crear otro array independiente con los mismos valores.</td>
+</tr>
+<tr>
+<td>Cambio de tamaño</td>
+<td>Crear un array mayor y copiar los datos originales.</td>
+</tr>
+<tr>
+<td>Ordenación</td>
+<td>Organizar los elementos de menor a mayor o alfabéticamente.</td>
+</tr>
+</tbody>
+</table>
+<p>Estas estrategias nos permiten resolver muchos problemas habituales utilizando arrays y estructuras de repetición.</p>
+<hr />
+<p><a href="#3-almacenamiento-de-la-entrada-de-datos-en-un-array">Volver al apartado anterior</a></p>
+<p><a href="#5-arrays-multidimensionales">Siguiente apartado: Arrays multidimensionales</a></p>
+<h2 id="5-arrays-multidimensionales">5. Arrays multidimensionales<a class="headerlink" href="#5-arrays-multidimensionales" title="Permanent link">&para;</a></h2>
+<p>Hasta ahora hemos trabajado con arrays que almacenan sus elementos en una única dimensión.</p>
+<p>Sin embargo, Java también permite crear arrays con varias dimensiones para organizar los datos de una forma más compleja.</p>
+<p>El array bidimensional es el más habitual y permite organizar la información como si fuera una tabla o una hoja de cálculo.</p>
+<h3 id="51-arrays-bidimensionales">5.1. Arrays bidimensionales<a class="headerlink" href="#51-arrays-bidimensionales" title="Permanent link">&para;</a></h3>
+<p>Un <strong>array bidimensional</strong> es una estructura que contiene filas y columnas.</p>
+<p>Para acceder a un elemento necesitamos utilizar dos índices:</p>
+<ul>
+<li>Primer índice: indica la fila.</li>
+<li>Segundo índice: indica la columna.</li>
+</ul>
+<p>Por ejemplo, podemos representar una matriz de tres filas y tres columnas:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">Columna 0</th>
+<th style="text-align: right;">Columna 1</th>
+<th style="text-align: right;">Columna 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fila 0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Fila 1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>Fila 2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+</tr>
+</tbody>
+</table>
+<p>Para acceder a cada elemento utilizamos la siguiente sintaxis:</p>
+<pre><code class="language-java">nombreArray[indiceFila][indiceColumna]
+</code></pre>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">matriz[0][2] // Devuelve 3
+matriz[1][1] // Devuelve 5
+matriz[2][2] // Devuelve 9
+</code></pre>
+<h3 id="52-declaracion-e-inicializacion-de-arrays-bidimensionales">5.2. Declaración e inicialización de arrays bidimensionales<a class="headerlink" href="#52-declaracion-e-inicializacion-de-arrays-bidimensionales" title="Permanent link">&para;</a></h3>
+<p>Para declarar un array bidimensional utilizamos dos pares de corchetes <code>[][]</code>.</p>
+<p>Existen diferentes formas de inicializarlo.</p>
+<p><strong>Inicialización con valores por defecto</strong></p>
+<p>Podemos crear una matriz indicando el número de filas y columnas.</p>
+<p>Sintaxis:</p>
+<pre><code class="language-java">tipoDato[][] nombreArray = new tipoDato[filas][columnas];
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[][] matriz = new int[5][5];
+</code></pre>
+<p>En este caso hemos creado una matriz de cinco filas y cinco columnas.</p>
+<p>Como utilizamos el tipo <code>int</code>, todas las posiciones se inicializan automáticamente con el valor 0.</p>
+<p><strong>Inicialización con valores concretos</strong></p>
+<p>También podemos inicializar una matriz indicando directamente los valores de cada fila.</p>
+<p>Cada fila se representa mediante otro array unidimensional y las diferentes filas se separan mediante comas.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[][] matriz = {
+    {1, 2, 3, 4, 5},
+    {6, 7, 8, 9, 10},
+    {11, 12, 13, 14, 15}
+};
+</code></pre>
+<p>En este caso tenemos una matriz de tres filas y cinco columnas.</p>
+<p>Se trata de una matriz rectangular porque todas sus filas tienen la misma longitud.</p>
+<p><strong>Arrays bidimensionales con filas de diferentes tamaños</strong></p>
+<p>Java también permite crear arrays bidimensionales cuyas filas tengan diferentes cantidades de elementos.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int[][] arrayBidimensional = {
+    {1},
+    {1, 2, 3},
+    {1, 2},
+    {1, 2, 3, 4, 5, 6}
+};
+</code></pre>
+<p>En este caso ya no tenemos una matriz rectangular, porque cada fila tiene una longitud diferente.</p>
+<h3 id="53-mostrar-el-contenido-de-una-matriz">5.3. Mostrar el contenido de una matriz<a class="headerlink" href="#53-mostrar-el-contenido-de-una-matriz" title="Permanent link">&para;</a></h3>
+<p>Para mostrar todos los elementos de un array bidimensional necesitamos utilizar dos bucles <code>for</code> anidados.</p>
+<p>El primer bucle recorre las filas y el segundo recorre las columnas de cada fila.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-java">int[][] matriz = {
+    {1, 2, 3, 4, 5},
+    {6, 7, 8, 9, 10},
+    {11, 12, 13, 14, 15}
+};
+
+for (int i = 0; i &lt; matriz.length; i++) {
+
+    for (int j = 0; j &lt; matriz[i].length; j++) {
+
+        System.out.print(matriz[i][j] + &quot;\t&quot;);
+
+    }
+
+    System.out.println(&quot;&quot;);
+}
+</code></pre>
+<p>El resultado será:</p>
+<pre><code class="language-text">1    2    3    4    5
+6    7    8    9    10
+11   12   13   14   15
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li><code>matriz.length</code> indica el número de filas.</li>
+<li><code>matriz[i].length</code> indica el número de columnas de la fila actual.</li>
+<li><code>matriz[i][j]</code> permite acceder al elemento correspondiente a una fila y una columna.</li>
+<li><code>System.out.print()</code> muestra los valores en la misma línea.</li>
+<li><code>System.out.println()</code> permite pasar a la siguiente fila.</li>
+</ul>
+<h3 id="54-acceder-a-las-posiciones-de-una-matriz">5.4. Acceder a las posiciones de una matriz<a class="headerlink" href="#54-acceder-a-las-posiciones-de-una-matriz" title="Permanent link">&para;</a></h3>
+<p>Para acceder a un elemento concreto de una matriz necesitamos indicar sus dos índices.</p>
+<p>La sintaxis es:</p>
+<pre><code class="language-java">nombreArray[fila][columna]
+</code></pre>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int[][] matriz = {
+    {1, 2, 3, 4, 5},
+    {6, 7, 8, 9, 10},
+    {11, 12, 13, 14, 15},
+    {16, 17, 18, 19, 20}
+};
+</code></pre>
+<p>Podemos consultar diferentes posiciones:</p>
+<pre><code class="language-java">System.out.println(matriz[0][2]);
+System.out.println(matriz[1][1]);
+System.out.println(matriz[2][2]);
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">3
+7
+13
+</code></pre>
+<p>También podemos modificar directamente el valor de una posición:</p>
+<pre><code class="language-java">matriz[0][2] = 100;
+</code></pre>
+<p>De esta manera sustituimos el valor que había en la primera fila y tercera columna por 100.</p>
+<h3 id="55-recorrer-arrays-bidimensionales">5.5. Recorrer arrays bidimensionales<a class="headerlink" href="#55-recorrer-arrays-bidimensionales" title="Permanent link">&para;</a></h3>
+<p>Para trabajar con matrices necesitamos utilizar dos estructuras de repetición anidadas:</p>
+<ul>
+<li>Un bucle para recorrer cada fila.</li>
+<li>Otro bucle para recorrer los elementos de cada fila.</li>
+</ul>
+<p>La estructura general es:</p>
+<pre><code class="language-java">// Matriz de m filas y n columnas
+
+int[][] a = new int[m][n];
+
+for (int i = 0; i &lt; a.length; i++) {
+
+    for (int j = 0; j &lt; a[i].length; j++) {
+
+        // Procesamiento de la matriz
+
+    }
+}
+</code></pre>
+<p>Este esquema permite recorrer todos los elementos de la matriz siguiendo el orden de sus filas y columnas.</p>
+<h3 id="56-iniciacion-procedural-de-matrices">5.6. Iniciación procedural de matrices<a class="headerlink" href="#56-iniciacion-procedural-de-matrices" title="Permanent link">&para;</a></h3>
+<p>Al igual que ocurre con los arrays unidimensionales, podemos inicializar una matriz mediante instrucciones y bucles.</p>
+<p><strong>Ejemplo 09: inicializar una matriz con el valor 1</strong></p>
+<p>El ejercicio consiste en crear una matriz de números enteros de cinco filas y diez columnas, asignando el valor 1 a todas sus posiciones.</p>
+<p>Después debemos mostrar su contenido.</p>
+<pre><code class="language-java">int[][] matriz = new int[5][10];
+
+for (int i = 0; i &lt; matriz.length; i++) {
+
+    for (int j = 0; j &lt; matriz[i].length; j++) {
+
+        matriz[i][j] = 1;
+
+    }
+}
+
+// Mostrar la matriz
+
+for (int i = 0; i &lt; matriz.length; i++) {
+
+    for (int j = 0; j &lt; matriz[i].length; j++) {
+
+        System.out.print(matriz[i][j] + &quot;\t&quot;);
+
+    }
+
+    System.out.println(&quot;&quot;);
+}
+</code></pre>
+<p><strong>Modificación propuesta por el profesor:</strong></p>
+<ul>
+<li>Pedir al usuario las dimensiones de la matriz (filas y columnas).</li>
+<li>Establecer un tamaño máximo de 20 filas y 20 columnas.</li>
+<li>Inicializar todos los elementos con números enteros aleatorios entre 0 y 10.</li>
+</ul>
+<h3 id="57-recorrido-de-matrices">5.7. Recorrido de matrices<a class="headerlink" href="#57-recorrido-de-matrices" title="Permanent link">&para;</a></h3>
+<p>Podemos utilizar los arrays bidimensionales para almacenar información organizada por filas.</p>
+<p><strong>Ejemplo 10: calcular la media de las notas de cada alumno</strong></p>
+<p>En este ejercicio cada fila de la matriz representa las notas de un alumno.</p>
+<p>La última posición de cada fila está inicialmente a 0 y debemos utilizarla para almacenar la media de las notas de ese alumno.</p>
+<p>Partimos de la siguiente matriz:</p>
+<pre><code class="language-java">float[][] matrizNotas = {
+    {4.5f, 6f, 5f, 8f, 0f},
+    {10f, 8f, 7.5f, 9.5f, 0f},
+    {3f, 2.5f, 4.5f, 6f, 0f},
+    {6f, 8.5f, 6f, 4f, 0f},
+    {9f, 7.5f, 7f, 8f, 0f}
+};
+</code></pre>
+<p>Para resolverlo debemos recorrer cada fila, sumar las cuatro primeras notas y dividir el resultado entre cuatro.</p>
+<p>La media se guardará en la última posición de cada fila.</p>
+<pre><code class="language-java">for (int i = 0; i &lt; matrizNotas.length; i++) {
+
+    float suma = 0;
+
+    for (int j = 0; j &lt; matrizNotas[i].length - 1; j++) {
+
+        suma = suma + matrizNotas[i][j];
+
+    }
+
+    float media = suma / (matrizNotas[i].length - 1);
+
+    matrizNotas[i][matrizNotas[i].length - 1] = media;
+
+}
+</code></pre>
+<p><strong>Modificación propuesta por el profesor:</strong></p>
+<p>Mostrar al final la nota media global de todos los estudiantes.</p>
+<h3 id="58-busqueda-en-matrices">5.8. Búsqueda en matrices<a class="headerlink" href="#58-busqueda-en-matrices" title="Permanent link">&para;</a></h3>
+<p>También podemos buscar un valor concreto dentro de una matriz bidimensional.</p>
+<p>Para realizar esta operación debemos recorrer las diferentes filas y columnas y comprobar si alguno de los elementos coincide con el valor que buscamos.</p>
+<p>En este caso podemos utilizar variables booleanas, también llamadas semáforos, para indicar si hemos encontrado el elemento.</p>
+<p><strong>Ejemplo 11: buscar una nota igual a 0</strong></p>
+<p>En este ejercicio cada fila representa las notas de un alumno.</p>
+<p>Debemos mostrar un mensaje si algún alumno ha obtenido un 0 en alguna actividad.</p>
+<p>La matriz inicial es:</p>
+<pre><code class="language-java">float[][] matrizNotas = {
+    {4.5f, 6f, 5f, 8f},
+    {10f, 8f, 7.5f, 9.5f},
+    {3f, 2.5f, 0f, 6f},
+    {6f, 8.5f, 6f, 4f},
+    {9f, 7.5f, 7f, 8f}
+};
+</code></pre>
+<p>Para realizar la búsqueda utilizaremos dos bucles <code>while</code> y una variable booleana.</p>
+<pre><code class="language-java">boolean encontrado = false;
+
+int i = 0;
+
+while (i &lt; matrizNotas.length &amp;&amp; !encontrado) {
+
+    int j = 0;
+
+    while (j &lt; matrizNotas[i].length &amp;&amp; !encontrado) {
+
+        if (matrizNotas[i][j] == 0f) {
+
+            encontrado = true;
+
+        }
+
+        j++;
+
+    }
+
+    i++;
+
+}
+
+if (encontrado) {
+
+    System.out.println(&quot;Se ha encontrado un alumno con un 0&quot;);
+
+} else {
+
+    System.out.println(&quot;No se ha encontrado ningún 0&quot;);
+
+}
+</code></pre>
+<p>En este ejemplo:</p>
+<ul>
+<li><code>encontrado</code> indica si hemos localizado el valor buscado.</li>
+<li>El primer <code>while</code> recorre las filas.</li>
+<li>El segundo <code>while</code> recorre las columnas de cada fila.</li>
+<li>Cuando encontramos un 0, cambiamos el valor de <code>encontrado</code> a <code>true</code>.</li>
+<li>Los bucles terminan cuando encontramos el valor o llegamos al final de la matriz.</li>
+</ul>
+<p><strong>Modificación propuesta por el profesor:</strong></p>
+<p>Cambiar la matriz inicial por otra que no contenga ningún 0 y comprobar que el programa muestra el mensaje correspondiente.</p>
+<h3 id="59-arrays-de-mas-de-dos-dimensiones">5.9. Arrays de más de dos dimensiones<a class="headerlink" href="#59-arrays-de-mas-de-dos-dimensiones" title="Permanent link">&para;</a></h3>
+<p>Java también permite crear arrays con más de dos dimensiones.</p>
+<p>En estos casos necesitamos utilizar más de dos índices para acceder a una posición concreta.</p>
+<p>Un array de tres dimensiones se puede imaginar como una estructura tridimensional en forma de cubo.</p>
+<p>Cuando utilizamos dimensiones superiores, la representación visual resulta más complicada y necesitamos un mayor nivel de abstracción.</p>
+<p>Cada índice permite seleccionar una posición dentro de una dimensión determinada.</p>
+<p>El conjunto de índices identifica el elemento concreto al que queremos acceder.</p>
+<p><strong>Ejemplo: declarar un array de cuatro dimensiones</strong></p>
+<p>Podemos crear un array de cuatro dimensiones utilizando la siguiente sintaxis:</p>
+<pre><code class="language-java">int[][][][] arrayCuatroDimensiones =
+    new int[5][10][4][20];
+</code></pre>
+<p>En este caso tenemos:</p>
+<ul>
+<li>Primera dimensión: tamaño 5.</li>
+<li>Segunda dimensión: tamaño 10.</li>
+<li>Tercera dimensión: tamaño 4.</li>
+<li>Cuarta dimensión: tamaño 20.</li>
+</ul>
+<p>Para acceder a un elemento necesitamos indicar los cuatro índices.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-java">int valor = arrayCuatroDimensiones[2][0][1][19];
+</code></pre>
+<p>También podemos modificar una posición:</p>
+<pre><code class="language-java">arrayCuatroDimensiones[2][0][1][19] = 25;
+</code></pre>
+<h3 id="510-ejemplo-practico-almacenar-temperaturas">5.10. Ejemplo práctico: almacenar temperaturas<a class="headerlink" href="#510-ejemplo-practico-almacenar-temperaturas" title="Permanent link">&para;</a></h3>
+<p><strong>Ejemplo 12: temperaturas durante todo el año</strong></p>
+<p>El último ejercicio del profesor consiste en crear un programa que genere un array multidimensional para almacenar las temperaturas de cada una de las 24 horas de los 30 días de los 12 meses del año.</p>
+<p>El programa debe cumplir los siguientes requisitos:</p>
+<ul>
+<li>Crear una estructura multidimensional para almacenar las temperaturas.</li>
+<li>Generar las temperaturas de forma aleatoria entre una temperatura mínima y una máxima.</li>
+<li>Mostrar los datos por pantalla indicando el mes.</li>
+<li>Mostrar las temperaturas de cada día utilizando solamente dos dígitos.</li>
+<li>Al terminar de mostrar cada mes, esperar a que el usuario pulse una tecla para continuar.</li>
+</ul>
+<p><strong>Modificación propuesta por el profesor:</strong></p>
+<p>Adaptar la estructura para que cada mes almacene los días que realmente tiene:</p>
+<table>
+<thead>
+<tr>
+<th>Mes</th>
+<th style="text-align: right;">Número de días</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enero</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr>
+<td>Febrero</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr>
+<td>Marzo</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr>
+<td>Abril</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr>
+<td>Mayo</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr>
+<td>Junio</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr>
+<td>Julio</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr>
+<td>Agosto</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr>
+<td>Septiembre</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr>
+<td>Octubre</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr>
+<td>Noviembre</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr>
+<td>Diciembre</td>
+<td style="text-align: right;">31</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resumen-del-apartado_1">Resumen del apartado<a class="headerlink" href="#resumen-del-apartado_1" title="Permanent link">&para;</a></h2>
+<p>Los arrays multidimensionales permiten organizar información utilizando varias dimensiones.</p>
+<p>En este apartado hemos aprendido:</p>
+<ul>
+<li>Declarar e inicializar matrices.</li>
+<li>Trabajar con filas y columnas.</li>
+<li>Acceder a posiciones utilizando dos índices.</li>
+<li>Recorrer matrices mediante bucles anidados.</li>
+<li>Inicializar matrices de forma procedural.</li>
+<li>Calcular medias recorriendo filas.</li>
+<li>Buscar valores dentro de matrices.</li>
+<li>Crear arrays de más de dos dimensiones.</li>
+<li>Aplicar arrays multidimensionales a un ejemplo de temperaturas.</li>
+</ul>
+<hr />
+<p><a href="#4-esquemas-fundamentales-en-la-utilizacion-de-arrays">Volver al apartado anterior</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
