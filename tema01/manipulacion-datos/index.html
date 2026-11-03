@@ -1650,16 +1650,16 @@
 
 
 
-<h1 id="manipulacion-basica-de-datos">Manipulación básica de datos<a class="headerlink" href="#manipulacion-basica-de-datos" title="Permanent link">&para;</a></h1>
+<h1 id="manipulacion-basica-de-datos">Manipulación básica de datos</h1>
 <p>Los programas informáticos trabajan con diferentes tipos de datos para realizar operaciones y obtener resultados.</p>
 <p>En Java podemos utilizar números, caracteres, valores lógicos y cadenas de texto. Para trabajar con estos datos necesitamos conocer sus tipos, cómo se almacenan en memoria y qué operaciones podemos realizar con ellos.</p>
 <p>En este apartado veremos cómo declarar variables y constantes, realizar operaciones, convertir datos y mostrar o introducir información mediante el teclado.</p>
 <hr />
-<h2 id="21-tipos-de-datos">2.1. Tipos de datos<a class="headerlink" href="#21-tipos-de-datos" title="Permanent link">&para;</a></h2>
+<h2 id="21-tipos-de-datos">2.1. Tipos de datos</h2>
 <p>Un <strong>tipo de dato</strong> permite indicar qué clase de información estamos utilizando y qué operaciones podemos realizar con ella.</p>
 <p>Los tipos de datos primitivos ya están incorporados en el lenguaje de programación y sirven como base para construir otros tipos de datos más complejos.</p>
 <p>En Java encontramos diferentes tipos de datos:</p>
-<h3 id="numeros-enteros">Números enteros<a class="headerlink" href="#numeros-enteros" title="Permanent link">&para;</a></h3>
+<h3 id="numeros-enteros">Números enteros</h3>
 <p>Los números enteros representan valores numéricos sin parte decimal. Pueden ser positivos, negativos o cero.</p>
 <p>En Java podemos utilizar los siguientes tipos:</p>
 <table>
@@ -1693,7 +1693,7 @@
 int temperatura = -5;
 int cantidad = 100;
 </code></pre>
-<h3 id="numeros-reales">Números reales<a class="headerlink" href="#numeros-reales" title="Permanent link">&para;</a></h3>
+<h3 id="numeros-reales">Números reales</h3>
 <p>Los números reales permiten representar valores que tienen parte decimal.</p>
 <p>En Java se utilizan principalmente:</p>
 <table>
@@ -1720,7 +1720,7 @@ double distancia = 125.75;
 double temperatura = -4.5;
 </code></pre>
 <p>En los literales de tipo <code>float</code> se utiliza la letra <code>f</code> al final del número.</p>
-<h3 id="caracteres">Caracteres<a class="headerlink" href="#caracteres" title="Permanent link">&para;</a></h3>
+<h3 id="caracteres">Caracteres</h3>
 <p>El tipo <code>char</code> permite almacenar un único carácter.</p>
 <p>Los caracteres se escriben entre comillas simples.</p>
 <p>Ejemplo:</p>
@@ -1728,7 +1728,7 @@ double temperatura = -4.5;
 char numero = '7';
 char simbolo = '#';
 </code></pre>
-<h3 id="valores-booleanos">Valores booleanos<a class="headerlink" href="#valores-booleanos" title="Permanent link">&para;</a></h3>
+<h3 id="valores-booleanos">Valores booleanos</h3>
 <p>El tipo <code>boolean</code> permite representar dos valores lógicos:</p>
 <ul>
 <li><code>true</code>: verdadero.</li>
@@ -1739,7 +1739,7 @@ char simbolo = '#';
 <pre><code class="language-java">boolean activo = true;
 boolean encontrado = false;
 </code></pre>
-<h3 id="cadenas-de-texto">Cadenas de texto<a class="headerlink" href="#cadenas-de-texto" title="Permanent link">&para;</a></h3>
+<h3 id="cadenas-de-texto">Cadenas de texto</h3>
 <p>El tipo <code>String</code> permite almacenar secuencias de caracteres, es decir, textos de diferentes longitudes.</p>
 <p>A diferencia de los tipos anteriores, <code>String</code> no es un tipo primitivo de Java.</p>
 <p>Las cadenas de texto se escriben entre comillas dobles.</p>
@@ -1747,7 +1747,7 @@ boolean encontrado = false;
 <pre><code class="language-java">String nombre = &quot;Carlos&quot;;
 String mensaje = &quot;Hola mundo&quot;;
 </code></pre>
-<h3 id="literales">Literales<a class="headerlink" href="#literales" title="Permanent link">&para;</a></h3>
+<h3 id="literales">Literales</h3>
 <p>Un <strong>literal</strong> es un valor fijo que escribimos directamente dentro del código fuente de un programa.</p>
 <p>Por ejemplo:</p>
 <pre><code class="language-java">int edad = 20;
@@ -1758,7 +1758,7 @@ String nombre = &quot;Carlos&quot;;
 </code></pre>
 <p>En estos ejemplos, <code>20</code>, <code>15.50</code>, <code>'A'</code>, <code>true</code> y <code>"Carlos"</code> son valores literales.</p>
 <hr />
-<h2 id="22-transformacion-de-los-datos">2.2. Transformación de los datos<a class="headerlink" href="#22-transformacion-de-los-datos" title="Permanent link">&para;</a></h2>
+<h2 id="22-transformacion-de-los-datos">2.2. Transformación de los datos</h2>
 <p>Dentro de un programa podemos realizar operaciones sobre los datos para obtener nuevos valores.</p>
 <p>Cada tipo de dato establece qué operaciones se pueden realizar con él.</p>
 <p>Las operaciones se pueden dividir en dos grupos:</p>
@@ -1766,7 +1766,7 @@ String nombre = &quot;Carlos&quot;;
 <li><strong>Unarias:</strong> trabajan con un único operando.</li>
 <li><strong>Binarias:</strong> necesitan dos operandos.</li>
 </ul>
-<h3 id="operadores-aritmeticos">Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permanent link">&para;</a></h3>
+<h3 id="operadores-aritmeticos">Operadores aritméticos</h3>
 <p>Los operadores aritméticos permiten realizar operaciones matemáticas.</p>
 <table>
 <thead>
@@ -1815,7 +1815,7 @@ int division = numero1 / numero2;
 int resto = numero1 % numero2;
 </code></pre>
 <p>El operador <code>%</code> permite obtener el resto de una división.</p>
-<h3 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h3>
+<h3 id="operadores-logicos">Operadores lógicos</h3>
 <p>Los operadores lógicos permiten trabajar con valores booleanos y combinar condiciones.</p>
 <table>
 <thead>
@@ -1851,7 +1851,7 @@ System.out.println(condicion1 &amp;&amp; condicion2);
 System.out.println(condicion1 || condicion2);
 System.out.println(!condicion1);
 </code></pre>
-<h3 id="operadores-relacionales">Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permanent link">&para;</a></h3>
+<h3 id="operadores-relacionales">Operadores relacionales</h3>
 <p>Permiten comparar dos valores y obtener un resultado booleano.</p>
 <table>
 <thead>
@@ -1894,7 +1894,7 @@ System.out.println(edad &gt;= 18);
 System.out.println(edad == 20);
 System.out.println(edad &lt; 18);
 </code></pre>
-<h3 id="operadores-de-cadenas-de-texto">Operadores de cadenas de texto<a class="headerlink" href="#operadores-de-cadenas-de-texto" title="Permanent link">&para;</a></h3>
+<h3 id="operadores-de-cadenas-de-texto">Operadores de cadenas de texto</h3>
 <p>En Java podemos utilizar el operador <code>+</code> para concatenar cadenas de texto.</p>
 <p>La concatenación consiste en unir diferentes cadenas de texto para formar una nueva.</p>
 <p>Ejemplo:</p>
@@ -1915,10 +1915,10 @@ System.out.println(&quot;La edad es &quot; + edad);
 <pre><code class="language-text">La edad es 25
 </code></pre>
 <hr />
-<h2 id="23-gestion-de-datos-en-la-memoria">2.3. Gestión de datos en la memoria<a class="headerlink" href="#23-gestion-de-datos-en-la-memoria" title="Permanent link">&para;</a></h2>
+<h2 id="23-gestion-de-datos-en-la-memoria">2.3. Gestión de datos en la memoria</h2>
 <p>Cuando ejecutamos un programa, necesitamos almacenar los datos para poder utilizarlos posteriormente.</p>
 <p>Para ello utilizamos variables y constantes.</p>
-<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<h3 id="variables">Variables</h3>
 <p>Una <strong>variable</strong> es un espacio de memoria identificado mediante un nombre, donde podemos almacenar un valor.</p>
 <p>El valor de una variable puede cambiar durante la ejecución del programa.</p>
 <p>Antes de utilizar una variable debemos declararla indicando su tipo de dato y su identificador.</p>
@@ -1937,7 +1937,7 @@ boolean activo = true;
 <li><code>edad</code>, <code>precio</code>, <code>nombre</code> y <code>activo</code> son los identificadores.</li>
 <li>Los valores situados después del signo <code>=</code> son los valores iniciales.</li>
 </ul>
-<h3 id="identificadores">Identificadores<a class="headerlink" href="#identificadores" title="Permanent link">&para;</a></h3>
+<h3 id="identificadores">Identificadores</h3>
 <p>Un identificador es el nombre que utilizamos para reconocer una variable, constante u otro elemento del programa.</p>
 <p>Para elegir identificadores debemos respetar las reglas del lenguaje Java.</p>
 <p>Algunas recomendaciones son:</p>
@@ -1953,7 +1953,7 @@ boolean activo = true;
 double precioProducto;
 String nombreAlumno;
 </code></pre>
-<h3 id="palabras-reservadas">Palabras reservadas<a class="headerlink" href="#palabras-reservadas" title="Permanent link">&para;</a></h3>
+<h3 id="palabras-reservadas">Palabras reservadas</h3>
 <p>Las palabras reservadas son palabras que tienen un significado especial dentro del lenguaje Java.</p>
 <p>Por ejemplo:</p>
 <ul>
@@ -1970,7 +1970,7 @@ String nombreAlumno;
 <li><code>return</code></li>
 </ul>
 <p>No podemos utilizarlas como identificadores de nuestras variables.</p>
-<h3 id="declaracion-e-inicializacion">Declaración e inicialización<a class="headerlink" href="#declaracion-e-inicializacion" title="Permanent link">&para;</a></h3>
+<h3 id="declaracion-e-inicializacion">Declaración e inicialización</h3>
 <p>Declarar una variable significa indicar su tipo de dato y su nombre.</p>
 <p>Inicializarla significa asignarle un valor inicial.</p>
 <p>Podemos hacer ambas operaciones al mismo tiempo:</p>
@@ -1980,7 +1980,7 @@ String nombreAlumno;
 <pre><code class="language-java">int numero;
 numero = 10;
 </code></pre>
-<h3 id="asignacion-de-valores">Asignación de valores<a class="headerlink" href="#asignacion-de-valores" title="Permanent link">&para;</a></h3>
+<h3 id="asignacion-de-valores">Asignación de valores</h3>
 <p>El operador <code>=</code> permite asignar un valor a una variable.</p>
 <p>Ejemplo:</p>
 <pre><code class="language-java">int numero = 10;
@@ -1993,7 +1993,7 @@ System.out.println(numero);
 <pre><code class="language-text">20
 </code></pre>
 <p>Cuando asignamos un nuevo valor, el anterior queda sustituido.</p>
-<h3 id="constantes">Constantes<a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h3>
+<h3 id="constantes">Constantes</h3>
 <p>Una <strong>constante</strong> es un valor que se establece una vez y no puede modificarse posteriormente.</p>
 <p>En Java se utiliza la palabra reservada <code>final</code> para declarar una constante.</p>
 <p>Ejemplo:</p>
@@ -2003,11 +2003,11 @@ final int EDAD_MINIMA = 18;
 <p>Por convenio, los nombres de las constantes suelen escribirse en mayúsculas.</p>
 <p>Las constantes son útiles cuando un mismo valor aparece varias veces en el programa y no queremos que cambie.</p>
 <hr />
-<h2 id="24-conversiones-de-tipos">2.4. Conversiones de tipos<a class="headerlink" href="#24-conversiones-de-tipos" title="Permanent link">&para;</a></h2>
+<h2 id="24-conversiones-de-tipos">2.4. Conversiones de tipos</h2>
 <p>En ocasiones necesitamos transformar un valor de un tipo de dato a otro diferente.</p>
 <p>Este proceso se conoce como <strong>conversión de tipos</strong> o <em>casting</em>.</p>
 <p>Por ejemplo, podemos necesitar convertir un número entero en un número real o transformar un número real en un entero.</p>
-<h3 id="conversion-implicita">Conversión implícita<a class="headerlink" href="#conversion-implicita" title="Permanent link">&para;</a></h3>
+<h3 id="conversion-implicita">Conversión implícita</h3>
 <p>Se produce cuando Java realiza automáticamente una conversión entre determinados tipos compatibles.</p>
 <p>Por ejemplo, podemos asignar un valor entero a una variable de tipo <code>double</code>:</p>
 <pre><code class="language-java">int numero = 10;
@@ -2020,7 +2020,7 @@ System.out.println(resultado);
 <pre><code class="language-text">10.0
 </code></pre>
 <p>En este caso Java convierte automáticamente el entero en un número real.</p>
-<h3 id="conversion-explicita-casting">Conversión explícita (casting)<a class="headerlink" href="#conversion-explicita-casting" title="Permanent link">&para;</a></h3>
+<h3 id="conversion-explicita-casting">Conversión explícita (casting)</h3>
 <p>Se utiliza cuando queremos indicar directamente el tipo de dato al que queremos convertir un valor.</p>
 <p>Para ello escribimos el tipo de destino entre paréntesis delante del valor.</p>
 <p>Ejemplo:</p>
@@ -2034,7 +2034,7 @@ System.out.println(numeroEntero);
 <pre><code class="language-text">15
 </code></pre>
 <p>Al convertir un número real en un entero se pierden los decimales. No se realiza un redondeo, sino que se eliminan.</p>
-<h3 id="perdida-de-informacion">Pérdida de información<a class="headerlink" href="#perdida-de-informacion" title="Permanent link">&para;</a></h3>
+<h3 id="perdida-de-informacion">Pérdida de información</h3>
 <p>Al realizar conversiones debemos tener cuidado, porque algunos valores pueden perder información.</p>
 <p>Por ejemplo:</p>
 <ul>
@@ -2043,10 +2043,10 @@ System.out.println(numeroEntero);
 </ul>
 <p>Por eso debemos comprobar que el valor que queremos convertir puede representarse correctamente con el nuevo tipo de dato.</p>
 <hr />
-<h2 id="25-visualizacion-y-entrada-de-datos">2.5. Visualización y entrada de datos<a class="headerlink" href="#25-visualizacion-y-entrada-de-datos" title="Permanent link">&para;</a></h2>
+<h2 id="25-visualizacion-y-entrada-de-datos">2.5. Visualización y entrada de datos</h2>
 <p>Los programas necesitan mostrar información al usuario y, en muchas ocasiones, recoger datos que este introduce mediante el teclado.</p>
 <p>En Java podemos realizar estas operaciones utilizando diferentes instrucciones.</p>
-<h3 id="salida-de-datos-por-pantalla">Salida de datos por pantalla<a class="headerlink" href="#salida-de-datos-por-pantalla" title="Permanent link">&para;</a></h3>
+<h3 id="salida-de-datos-por-pantalla">Salida de datos por pantalla</h3>
 <p>Para mostrar información por pantalla utilizamos principalmente:</p>
 <ul>
 <li><code>System.out.print()</code>: muestra información sin añadir un salto de línea al final.</li>
@@ -2068,7 +2068,7 @@ System.out.println(&quot;mundo&quot;);
 mundo
 </code></pre>
 <p>Estas instrucciones permiten mostrar valores de diferentes tipos de datos.</p>
-<h3 id="entrada-de-datos-por-teclado">Entrada de datos por teclado<a class="headerlink" href="#entrada-de-datos-por-teclado" title="Permanent link">&para;</a></h3>
+<h3 id="entrada-de-datos-por-teclado">Entrada de datos por teclado</h3>
 <p>Para recoger información introducida por el usuario podemos utilizar la clase <code>Scanner</code>, que pertenece al paquete <code>java.util</code>.</p>
 <p>Primero debemos importarla:</p>
 <pre><code class="language-java">import java.util.Scanner;
@@ -2107,7 +2107,7 @@ mundo
 </tr>
 </tbody>
 </table>
-<h3 id="ejemplo-introducir-un-nombre">Ejemplo: introducir un nombre<a class="headerlink" href="#ejemplo-introducir-un-nombre" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-introducir-un-nombre">Ejemplo: introducir un nombre</h3>
 <pre><code class="language-java">import java.util.Scanner;
 
 public class ValorNom {
@@ -2132,7 +2132,7 @@ public class ValorNom {
 <li>Recogemos el texto mediante <code>nextLine()</code>.</li>
 <li>Mostramos el nombre introducido.</li>
 </ol>
-<h3 id="ejemplo-sumar-dos-numeros-enteros">Ejemplo: sumar dos números enteros<a class="headerlink" href="#ejemplo-sumar-dos-numeros-enteros" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-sumar-dos-numeros-enteros">Ejemplo: sumar dos números enteros</h3>
 <pre><code class="language-java">import java.util.Scanner;
 
 public class SumarNumeros {
@@ -2162,7 +2162,7 @@ public class SumarNumeros {
 Escribe otro número: 8
 El resultado de la suma es 13.
 </code></pre>
-<h3 id="algunas-consideraciones-sobre-la-entrada-de-datos">Algunas consideraciones sobre la entrada de datos<a class="headerlink" href="#algunas-consideraciones-sobre-la-entrada-de-datos" title="Permanent link">&para;</a></h3>
+<h3 id="algunas-consideraciones-sobre-la-entrada-de-datos">Algunas consideraciones sobre la entrada de datos</h3>
 <p>Cuando utilizamos <code>Scanner</code>, debemos tener en cuenta que:</p>
 <ul>
 <li>El dato introducido debe coincidir con el tipo que espera el programa.</li>
@@ -2172,7 +2172,7 @@ El resultado de la suma es 13.
 <li>Después de determinadas lecturas numéricas puede ser necesario utilizar <code>nextLine()</code> para consumir el salto de línea pendiente.</li>
 </ul>
 <hr />
-<h2 id="resumen-del-apartado">Resumen del apartado<a class="headerlink" href="#resumen-del-apartado" title="Permanent link">&para;</a></h2>
+<h2 id="resumen-del-apartado">Resumen del apartado</h2>
 <p>En este apartado hemos aprendido:</p>
 <ul>
 <li>Los principales tipos de datos utilizados en Java.</li>

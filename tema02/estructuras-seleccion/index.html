@@ -1352,14 +1352,14 @@
 
 
 
-<h1 id="2-estructuras-de-seleccion">2. Estructuras de selección<a class="headerlink" href="#2-estructuras-de-seleccion" title="Permanent link">&para;</a></h1>
+<h1 id="2-estructuras-de-seleccion">2. Estructuras de selección</h1>
 <p>Las estructuras de selección permiten que un programa pueda tomar decisiones y ejecutar unas instrucciones u otras dependiendo de si se cumple una condición.</p>
 <p>Para ello, se utilizan expresiones que devuelven un resultado booleano, es decir, pueden ser <code>true</code> (verdadero) o <code>false</code> (falso).</p>
 <p>El código que se ejecutará dependerá del resultado de esa condición.</p>
-<h2 id="21-estructura-if">2.1. Estructura <code>if</code><a class="headerlink" href="#21-estructura-if" title="Permanent link">&para;</a></h2>
+<h2 id="21-estructura-if">2.1. Estructura <code>if</code></h2>
 <p>La estructura <code>if</code> permite ejecutar un conjunto de instrucciones solamente cuando se cumple una condición.</p>
 <p>Si la condición es verdadera (<code>true</code>), se ejecutan las instrucciones que están dentro del bloque <code>if</code>. Si es falsa (<code>false</code>), se salta ese bloque y el programa continúa con las siguientes instrucciones.</p>
-<h3 id="sintaxis">Sintaxis<a class="headerlink" href="#sintaxis" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxis">Sintaxis</h3>
 <pre><code class="language-java">if (condicion) {
     // Instrucciones que se ejecutan si la condición es verdadera
 }
@@ -1369,7 +1369,7 @@
 <li><code>condicion</code>: expresión que devuelve <code>true</code> o <code>false</code>.</li>
 <li><code>{ }</code>: delimitan el bloque de instrucciones que se ejecutará si se cumple la condición.</li>
 </ul>
-<h3 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo">Ejemplo</h3>
 <p>Vamos a comprobar si una persona es mayor de edad.</p>
 <pre><code class="language-java">int edad = 20;
 
@@ -1382,7 +1382,7 @@ if (edad &gt;= 18) {
 <pre><code class="language-text">Eres mayor de edad
 </code></pre>
 <p>Si la edad fuera inferior a 18, no se ejecutaría el bloque <code>if</code> y no aparecería ningún mensaje.</p>
-<h3 id="cosas-que-debemos-tener-en-cuenta">Cosas que debemos tener en cuenta<a class="headerlink" href="#cosas-que-debemos-tener-en-cuenta" title="Permanent link">&para;</a></h3>
+<h3 id="cosas-que-debemos-tener-en-cuenta">Cosas que debemos tener en cuenta</h3>
 <ul>
 <li>La condición siempre debe escribirse entre paréntesis.</li>
 <li>Si la condición es verdadera, se ejecutan las instrucciones que están entre las llaves.</li>
@@ -1391,7 +1391,7 @@ if (edad &gt;= 18) {
 <li>Las instrucciones que están dentro del bloque sí terminan en punto y coma.</li>
 <li>Es recomendable utilizar sangría para que el código sea más fácil de leer.</li>
 </ul>
-<h3 id="errores-habituales">Errores habituales<a class="headerlink" href="#errores-habituales" title="Permanent link">&para;</a></h3>
+<h3 id="errores-habituales">Errores habituales</h3>
 <p>Algunos errores que podemos cometer al utilizar <code>if</code> son:</p>
 <ul>
 <li>No poner los paréntesis de la condición.</li>
@@ -1399,7 +1399,7 @@ if (edad &gt;= 18) {
 <li>Poner un punto y coma después de la condición <code>if</code>, haciendo que el bloque se ejecute independientemente del resultado.</li>
 <li>No utilizar las llaves cuando tenemos varias instrucciones dentro del bloque.</li>
 </ul>
-<h3 id="ejercicio-calcular-un-descuento">Ejercicio: calcular un descuento<a class="headerlink" href="#ejercicio-calcular-un-descuento" title="Permanent link">&para;</a></h3>
+<h3 id="ejercicio-calcular-un-descuento">Ejercicio: calcular un descuento</h3>
 <p>El profesor propone crear un programa que aplique un descuento del 8 % cuando el precio de una compra sea igual o superior a 200 €.</p>
 <p>El programa debe:</p>
 <ul>
@@ -1410,18 +1410,18 @@ if (edad &gt;= 18) {
 <li>Utilizar constantes para definir el precio mínimo y el porcentaje de descuento.</li>
 </ul>
 <p>También se propone modificar el ejercicio para aplicar una penalización de 2 € cuando el precio sea inferior a 30 €, teniendo en cuenta que el valor introducido no puede ser negativo.</p>
-<h2 id="22-estructura-ifelse">2.2. Estructura <code>if/else</code><a class="headerlink" href="#22-estructura-ifelse" title="Permanent link">&para;</a></h2>
+<h2 id="22-estructura-ifelse">2.2. Estructura <code>if/else</code></h2>
 <p>La estructura <code>if/else</code> permite elegir entre dos posibilidades.</p>
 <p>Primero comprueba una condición. Si es verdadera (<code>true</code>), ejecuta las instrucciones del bloque <code>if</code>. Si es falsa (<code>false</code>), ejecuta las instrucciones del bloque <code>else</code>.</p>
 <p>A diferencia de <code>if</code>, aquí siempre se ejecuta uno de los dos bloques.</p>
-<h3 id="sintaxis_1">Sintaxis<a class="headerlink" href="#sintaxis_1" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxis_1">Sintaxis</h3>
 <pre><code class="language-java">if (condicion) {
     // Instrucciones si la condición es verdadera
 } else {
     // Instrucciones si la condición es falsa
 }
 </code></pre>
-<h3 id="ejemplo_1">Ejemplo<a class="headerlink" href="#ejemplo_1" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo_1">Ejemplo</h3>
 <p>Vamos a comprobar si una persona es mayor de edad o menor de edad.</p>
 <pre><code class="language-java">int edad = 16;
 
@@ -1436,7 +1436,7 @@ if (edad &gt;= 18) {
 <pre><code class="language-text">Eres menor de edad
 </code></pre>
 <p>Si la edad fuera 20, se ejecutaría el bloque <code>if</code> y aparecería el mensaje de mayor de edad.</p>
-<h3 id="ejercicio-adivinar-un-numero-secreto">Ejercicio: adivinar un número secreto<a class="headerlink" href="#ejercicio-adivinar-un-numero-secreto" title="Permanent link">&para;</a></h3>
+<h3 id="ejercicio-adivinar-un-numero-secreto">Ejercicio: adivinar un número secreto</h3>
 <p>El profesor propone crear un programa que permita adivinar un número secreto.</p>
 <p>El programa debe:</p>
 <ul>
@@ -1455,13 +1455,13 @@ if (edad &gt;= 18) {
 <li>Permitir ganar si se acierta al menos uno de los dos números.</li>
 <li>Mostrar un mensaje de aviso y terminar el programa si el usuario no introduce un número.</li>
 </ul>
-<h2 id="23-estructura-ifelse-ifelse">2.3. Estructura <code>if/else if/else</code><a class="headerlink" href="#23-estructura-ifelse-ifelse" title="Permanent link">&para;</a></h2>
+<h2 id="23-estructura-ifelse-ifelse">2.3. Estructura <code>if/else if/else</code></h2>
 <p>La estructura <code>if/else if/else</code> permite comprobar varias condiciones diferentes y ejecutar el bloque de instrucciones correspondiente a la primera condición que se cumpla.</p>
 <p>Se utiliza cuando tenemos varias posibilidades y necesitamos elegir entre ellas.</p>
 <p>Solamente se ejecutará un bloque de todos los disponibles.</p>
 <p>Si varias condiciones se cumplen, se ejecutará únicamente la primera, siguiendo el orden en el que aparecen en el código.</p>
 <p>El bloque <code>else</code> es opcional. Si ninguna condición se cumple y no hemos utilizado <code>else</code>, no se ejecutará ninguna de las instrucciones de esa estructura.</p>
-<h3 id="sintaxis_2">Sintaxis<a class="headerlink" href="#sintaxis_2" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxis_2">Sintaxis</h3>
 <pre><code class="language-java">if (condicion1) {
     // Instrucciones si se cumple la primera condición
 } else if (condicion2) {
@@ -1473,7 +1473,7 @@ if (edad &gt;= 18) {
 }
 </code></pre>
 <p>Podemos añadir tantos bloques <code>else if</code> como necesitemos.</p>
-<h3 id="ejemplo-clasificar-una-nota">Ejemplo: clasificar una nota<a class="headerlink" href="#ejemplo-clasificar-una-nota" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-clasificar-una-nota">Ejemplo: clasificar una nota</h3>
 <p>Vamos a utilizar esta estructura para indicar el resultado de una nota numérica.</p>
 <pre><code class="language-java">float nota = 8.5f;
 
@@ -1500,7 +1500,7 @@ if (nota &lt; 5) {
 <p>Por tanto, aparece:</p>
 <pre><code class="language-text">NOTABLE
 </code></pre>
-<h3 id="ejercicio-clasificar-las-notas">Ejercicio: clasificar las notas<a class="headerlink" href="#ejercicio-clasificar-las-notas" title="Permanent link">&para;</a></h3>
+<h3 id="ejercicio-clasificar-las-notas">Ejercicio: clasificar las notas</h3>
 <p>El profesor propone crear un programa que pida una nota al usuario y muestre el resultado correspondiente:</p>
 <ul>
 <li>SUSPENSO.</li>
@@ -1515,7 +1515,7 @@ if (nota &lt; 5) {
 <li>Mostrar un mensaje de error si la nota no es correcta.</li>
 <li>Mostrar un mensaje si el usuario introduce un valor que no es un número.</li>
 </ul>
-<h3 id="ejercicio-aplicar-un-descuento-maximo">Ejercicio: aplicar un descuento máximo<a class="headerlink" href="#ejercicio-aplicar-un-descuento-maximo" title="Permanent link">&para;</a></h3>
+<h3 id="ejercicio-aplicar-un-descuento-maximo">Ejercicio: aplicar un descuento máximo</h3>
 <p>Se propone modificar el ejercicio anterior del descuento del 8 %.</p>
 <p>El programa debe controlar que:</p>
 <ul>
@@ -1525,7 +1525,7 @@ if (nota &lt; 5) {
 <li>Si el descuento calculado supera los 200 €, se aplique solamente el descuento máximo.</li>
 <li>Se muestre un mensaje indicando cuándo se aplica ese límite.</li>
 </ul>
-<h2 id="24-estructura-switch">2.4. Estructura <code>switch</code><a class="headerlink" href="#24-estructura-switch" title="Permanent link">&para;</a></h2>
+<h2 id="24-estructura-switch">2.4. Estructura <code>switch</code></h2>
 <p>La estructura <code>switch</code> permite seleccionar qué instrucciones ejecutar dependiendo del valor de una expresión.</p>
 <p>A diferencia de <code>if</code>, no se basa en comprobar una condición booleana, sino en comparar el resultado de una expresión con diferentes valores concretos.</p>
 <p>Puede utilizar expresiones de los siguientes tipos:</p>
@@ -1539,7 +1539,7 @@ if (nota &lt; 5) {
 <li><code>char</code></li>
 </ul>
 <p>No se pueden utilizar valores reales como <code>float</code> o <code>double</code>.</p>
-<h3 id="sintaxis_3">Sintaxis<a class="headerlink" href="#sintaxis_3" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxis_3">Sintaxis</h3>
 <pre><code class="language-java">switch (variable) {
     case valor1:
         // Instrucciones

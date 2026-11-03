@@ -1650,20 +1650,20 @@
 
 
 
-<h1 id="3-estructuras-de-repeticion">3. Estructuras de repetición<a class="headerlink" href="#3-estructuras-de-repeticion" title="Permanent link">&para;</a></h1>
+<h1 id="3-estructuras-de-repeticion">3. Estructuras de repetición</h1>
 <p>Las estructuras de repetición permiten ejecutar varias veces un mismo conjunto de instrucciones mientras se cumpla una determinada condición.</p>
 <p>También se conocen como estructuras iterativas y se utilizan cuando necesitamos repetir una operación varias veces sin tener que escribir las mismas instrucciones continuamente.</p>
 <p>En Java disponemos de tres estructuras principales de repetición: <code>while</code>, <code>do/while</code> y <code>for</code>.</p>
 <hr />
-<h2 id="31-control-de-las-estructuras-de-repeticion">3.1. Control de las estructuras de repetición<a class="headerlink" href="#31-control-de-las-estructuras-de-repeticion" title="Permanent link">&para;</a></h2>
+<h2 id="31-control-de-las-estructuras-de-repeticion">3.1. Control de las estructuras de repetición</h2>
 <p>Antes de estudiar los diferentes tipos de bucles, debemos conocer algunos conceptos relacionados con su funcionamiento.</p>
-<h3 id="bucle-o-ciclo">Bucle o ciclo<a class="headerlink" href="#bucle-o-ciclo" title="Permanent link">&para;</a></h3>
+<h3 id="bucle-o-ciclo">Bucle o ciclo</h3>
 <p>Un <strong>bucle</strong> es un conjunto de instrucciones que se ejecuta varias veces.</p>
 <p>La repetición continúa mientras se cumpla una determinada condición.</p>
-<h3 id="iteracion">Iteración<a class="headerlink" href="#iteracion" title="Permanent link">&para;</a></h3>
+<h3 id="iteracion">Iteración</h3>
 <p>Una <strong>iteración</strong> es cada una de las ejecuciones individuales que realiza un bucle.</p>
 <p>Por ejemplo, si un bucle muestra diez veces un mensaje, habrá realizado diez iteraciones.</p>
-<h3 id="funcionamiento-de-un-bucle">Funcionamiento de un bucle<a class="headerlink" href="#funcionamiento-de-un-bucle" title="Permanent link">&para;</a></h3>
+<h3 id="funcionamiento-de-un-bucle">Funcionamiento de un bucle</h3>
 <p>El funcionamiento general de una estructura de repetición es el siguiente:</p>
 <ol>
 <li>Se comprueba una condición lógica.</li>
@@ -1672,7 +1672,7 @@
 <li>El proceso continúa mientras la condición sea verdadera.</li>
 <li>Cuando la condición es falsa (<code>false</code>), el bucle termina y el programa continúa con las instrucciones siguientes.</li>
 </ol>
-<h3 id="bucles-infinitos">Bucles infinitos<a class="headerlink" href="#bucles-infinitos" title="Permanent link">&para;</a></h3>
+<h3 id="bucles-infinitos">Bucles infinitos</h3>
 <p>Un <strong>bucle infinito</strong> es una secuencia de instrucciones que se repite indefinidamente porque nunca llega a cumplirse la condición necesaria para terminarlo.</p>
 <p>Por ejemplo:</p>
 <pre><code class="language-java">int i = 0;
@@ -1689,7 +1689,7 @@ while (true) {
 <p>En Windows también podemos utilizar el comando:</p>
 <pre><code class="language-powershell">taskkill /f /PID numero_proceso
 </code></pre>
-<h3 id="variables-de-control">Variables de control<a class="headerlink" href="#variables-de-control" title="Permanent link">&para;</a></h3>
+<h3 id="variables-de-control">Variables de control</h3>
 <p>Las variables de control permiten controlar cuántas veces se ejecuta un bucle o cuándo debe terminar.</p>
 <p>Podemos encontrar tres tipos principales:</p>
 <p><strong>Contador</strong></p>
@@ -1716,11 +1716,11 @@ resultado = resultado + 10;
 </code></pre>
 <p>Cuando ya no queremos continuar, cambiamos su valor a <code>false</code>.</p>
 <hr />
-<h2 id="32-estructura-while-repetir-si-se-cumple-una-condicion">3.2. Estructura <code>while</code>: repetir si se cumple una condición<a class="headerlink" href="#32-estructura-while-repetir-si-se-cumple-una-condicion" title="Permanent link">&para;</a></h2>
+<h2 id="32-estructura-while-repetir-si-se-cumple-una-condicion">3.2. Estructura <code>while</code>: repetir si se cumple una condición</h2>
 <p>La estructura <code>while</code> permite repetir un conjunto de instrucciones mientras se cumpla una condición lógica.</p>
 <p>La condición se comprueba al principio de cada iteración.</p>
 <p>Esto significa que, si la condición es falsa desde el primer momento, las instrucciones del bucle no se ejecutarán ninguna vez.</p>
-<h3 id="sintaxis">Sintaxis<a class="headerlink" href="#sintaxis" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxis">Sintaxis</h3>
 <pre><code class="language-java">// Instrucciones anteriores
 
 while (condicion) {
@@ -1731,7 +1731,7 @@ while (condicion) {
 
 // Instrucciones posteriores
 </code></pre>
-<h3 id="ejemplo-01-mostrar-100-veces-hola-mundo">Ejemplo 01: mostrar 100 veces Hola Mundo<a class="headerlink" href="#ejemplo-01-mostrar-100-veces-hola-mundo" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-01-mostrar-100-veces-hola-mundo">Ejemplo 01: mostrar 100 veces Hola Mundo</h3>
 <p>Vamos a utilizar un contador para mostrar el mensaje Hola Mundo cien veces.</p>
 <pre><code class="language-java">int i = 0;
 
@@ -1758,7 +1758,7 @@ while (i &lt; 100) {
 <li>Pedir al usuario cuántas repeticiones quiere realizar.</li>
 <li>Comprobar que el usuario introduce un número entero válido.</li>
 </ul>
-<h3 id="utilizacion-del-contador">Utilización del contador<a class="headerlink" href="#utilizacion-del-contador" title="Permanent link">&para;</a></h3>
+<h3 id="utilizacion-del-contador">Utilización del contador</h3>
 <p>El nombre del contador puede ser cualquiera, aunque es habitual utilizar letras como <code>i</code>, <code>j</code> o <code>k</code>.</p>
 <p>También es habitual inicializar el contador a 0 en lugar de 1.</p>
 <p>Para comprobar cómo evoluciona el valor de una variable podemos utilizar el modo de depuración (<em>Debug</em>) de Eclipse.</p>
@@ -1794,7 +1794,7 @@ while (i &lt; 100) {
 </tbody>
 </table>
 <p>Estas opciones permiten ejecutar el programa paso a paso y observar cómo cambian los valores de las variables.</p>
-<h3 id="ejemplo-02-tabla-de-multiplicar">Ejemplo 02: tabla de multiplicar<a class="headerlink" href="#ejemplo-02-tabla-de-multiplicar" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-02-tabla-de-multiplicar">Ejemplo 02: tabla de multiplicar</h3>
 <p>Podemos aprovechar el contador para realizar operaciones matemáticas dentro del bucle.</p>
 <p>En este ejemplo vamos a mostrar la tabla de multiplicar de un número introducido por el usuario.</p>
 <pre><code class="language-java">import java.util.Scanner;
@@ -1829,7 +1829,7 @@ public class TablaMultiplicar {
 <p>En cada iteración se multiplica el número elegido por el valor del contador.</p>
 <p><strong>Modificación propuesta por el profesor:</strong></p>
 <p>Comprobar que el usuario realmente introduce un número entero.</p>
-<h3 id="ejemplo-03-acumulador">Ejemplo 03: acumulador<a class="headerlink" href="#ejemplo-03-acumulador" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-03-acumulador">Ejemplo 03: acumulador</h3>
 <p>En este ejemplo vamos a sumar los múltiplos de 3 desde 0 hasta un valor indicado por el usuario.</p>
 <p>A diferencia del ejemplo anterior, el contador no aumenta de uno en uno, sino de tres en tres.</p>
 <pre><code class="language-java">import java.util.Scanner;
@@ -1874,11 +1874,11 @@ public class MultiplosTres {
 <li>Comprobar que el usuario introduce un número entero.</li>
 <li>Pedir también de qué número quiere sumar los múltiplos, en lugar de utilizar siempre el 3.</li>
 </ul>
-<h3 id="semaforos-booleanos">Semáforos booleanos<a class="headerlink" href="#semaforos-booleanos" title="Permanent link">&para;</a></h3>
+<h3 id="semaforos-booleanos">Semáforos booleanos</h3>
 <p>Los semáforos booleanos permiten controlar cuándo debemos dejar de repetir un bucle.</p>
 <p>Se utilizan cuando no podemos calcular previamente cuántas iteraciones serán necesarias y necesitamos repetir las instrucciones hasta que se produzca una situación concreta.</p>
 <p>Por ejemplo, podemos utilizar una variable booleana para indicar si el usuario ha acertado un número secreto.</p>
-<h3 id="ejemplo-04-adivinar-un-numero-utilizando-un-semaforo">Ejemplo 04: adivinar un número utilizando un semáforo<a class="headerlink" href="#ejemplo-04-adivinar-un-numero-utilizando-un-semaforo" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-04-adivinar-un-numero-utilizando-un-semaforo">Ejemplo 04: adivinar un número utilizando un semáforo</h3>
 <p>Vamos a modificar el ejercicio del número secreto para que el usuario pueda seguir intentándolo hasta acertar.</p>
 <p>Utilizaremos una variable booleana llamada <code>acertado</code>.</p>
 <pre><code class="language-java">boolean acertado = false;
@@ -1908,11 +1908,11 @@ while (!acertado) {
 <li>Mostrar un mensaje cuando el usuario decida retirarse.</li>
 </ul>
 <hr />
-<h2 id="33-estructura-dowhile-repetir-al-menos-una-vez">3.3. Estructura <code>do/while</code>: repetir al menos una vez<a class="headerlink" href="#33-estructura-dowhile-repetir-al-menos-una-vez" title="Permanent link">&para;</a></h2>
+<h2 id="33-estructura-dowhile-repetir-al-menos-una-vez">3.3. Estructura <code>do/while</code>: repetir al menos una vez</h2>
 <p>La estructura <code>do/while</code> permite repetir un conjunto de instrucciones mientras se cumpla una condición lógica.</p>
 <p>Su principal diferencia respecto a <code>while</code> es que la condición se comprueba al final de cada iteración.</p>
 <p>Por este motivo, las instrucciones del bucle se ejecutan siempre al menos una vez, aunque la condición sea falsa desde el principio.</p>
-<h3 id="sintaxis_1">Sintaxis<a class="headerlink" href="#sintaxis_1" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxis_1">Sintaxis</h3>
 <pre><code class="language-java">// Instrucciones anteriores
 
 do {
@@ -1924,7 +1924,7 @@ do {
 // Instrucciones posteriores
 </code></pre>
 <p>Observa que, a diferencia de <code>while</code>, en <code>do/while</code> se escribe un punto y coma después de la condición final.</p>
-<h3 id="ejemplo-05-pedir-un-numero-entre-1-y-10">Ejemplo 05: pedir un número entre 1 y 10<a class="headerlink" href="#ejemplo-05-pedir-un-numero-entre-1-y-10" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-05-pedir-un-numero-entre-1-y-10">Ejemplo 05: pedir un número entre 1 y 10</h3>
 <p>Vamos a pedir al usuario que introduzca un número entre 1 y 10.</p>
 <p>Si el valor no es correcto, volveremos a solicitarlo hasta que introduzca uno válido.</p>
 <pre><code class="language-java">import java.util.Scanner;
@@ -1958,7 +1958,7 @@ public class NumeroValido {
 </ol>
 <p>Este ejemplo utiliza <code>do/while</code> porque necesitamos pedir el dato al menos una vez antes de poder comprobar si es correcto.</p>
 <p>Si el ejercicio está bien planteado, también podemos conseguir el mismo resultado utilizando <code>while</code>.</p>
-<h3 id="ejemplo-06-comprobar-la-primera-letra-de-una-palabra">Ejemplo 06: comprobar la primera letra de una palabra<a class="headerlink" href="#ejemplo-06-comprobar-la-primera-letra-de-una-palabra" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-06-comprobar-la-primera-letra-de-una-palabra">Ejemplo 06: comprobar la primera letra de una palabra</h3>
 <p>El profesor propone pedir al usuario una palabra que comience por alguna de las siguientes letras:</p>
 <ul>
 <li>b</li>
@@ -1979,10 +1979,10 @@ public class NumeroValido {
 <li>Ignorar los espacios que pueda haber al principio de la palabra utilizando <code>palabra.trim()</code>.</li>
 </ul>
 <hr />
-<h2 id="34-estructura-for-repetir-un-numero-determinado-de-veces">3.4. Estructura <code>for</code>: repetir un número determinado de veces<a class="headerlink" href="#34-estructura-for-repetir-un-numero-determinado-de-veces" title="Permanent link">&para;</a></h2>
+<h2 id="34-estructura-for-repetir-un-numero-determinado-de-veces">3.4. Estructura <code>for</code>: repetir un número determinado de veces</h2>
 <p>La estructura <code>for</code> permite repetir un conjunto de instrucciones un número determinado de veces.</p>
 <p>Se utiliza especialmente cuando conocemos el número de repeticiones que queremos realizar o podemos establecerlo mediante un contador.</p>
-<h3 id="sintaxis_2">Sintaxis<a class="headerlink" href="#sintaxis_2" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxis_2">Sintaxis</h3>
 <pre><code class="language-java">// Instrucciones anteriores
 
 for (inicializacion; condicion; incremento) {
@@ -2003,7 +2003,7 @@ for (inicializacion; condicion; incremento) {
 <p><strong>Incremento o decremento</strong></p>
 <p>Es la instrucción que modifica el valor del contador al finalizar cada iteración.</p>
 <p>Puede aumentar o disminuir su valor.</p>
-<h3 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo">Ejemplo</h3>
 <pre><code class="language-java">for (int i = 0; i &lt; 5; i++) {
 
     System.out.println(&quot;Hola Mundo&quot;);
@@ -2018,7 +2018,7 @@ for (inicializacion; condicion; incremento) {
 <li>Incrementamos el contador en una unidad.</li>
 </ul>
 <p>El resultado será que el mensaje aparecerá cinco veces.</p>
-<h3 id="equivalencia-entre-for-y-while">Equivalencia entre <code>for</code> y <code>while</code><a class="headerlink" href="#equivalencia-entre-for-y-while" title="Permanent link">&para;</a></h3>
+<h3 id="equivalencia-entre-for-y-while">Equivalencia entre <code>for</code> y <code>while</code></h3>
 <p>Una estructura <code>for</code> puede realizarse también utilizando <code>while</code>.</p>
 <p>Por ejemplo, estas dos estructuras son equivalentes:</p>
 <pre><code class="language-java">for (int i = 0; i &lt; 5; i++) {
@@ -2038,7 +2038,7 @@ while (i &lt; 5) {
 }
 </code></pre>
 <p>La diferencia está en que <code>for</code> reúne la inicialización, la condición y el incremento en una misma línea, mientras que <code>while</code> los distribuye entre diferentes instrucciones.</p>
-<h3 id="operadores-de-incremento-y-decremento">Operadores de incremento y decremento<a class="headerlink" href="#operadores-de-incremento-y-decremento" title="Permanent link">&para;</a></h3>
+<h3 id="operadores-de-incremento-y-decremento">Operadores de incremento y decremento</h3>
 <p>En Java podemos utilizar operadores que permiten aumentar o disminuir el valor de una variable.</p>
 <table>
 <thead>
@@ -2066,7 +2066,7 @@ while (i &lt; 5) {
 </tr>
 </tbody>
 </table>
-<h3 id="ejemplo-07-tabla-de-multiplicar-ascendente-y-descendente">Ejemplo 07: tabla de multiplicar ascendente y descendente<a class="headerlink" href="#ejemplo-07-tabla-de-multiplicar-ascendente-y-descendente" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-07-tabla-de-multiplicar-ascendente-y-descendente">Ejemplo 07: tabla de multiplicar ascendente y descendente</h3>
 <p>El profesor propone mostrar la tabla de multiplicar de un número indicado por el usuario.</p>
 <p>Primero se mostrará de forma ascendente, desde 1 hasta 10, y después de forma descendente, desde 10 hasta 1.</p>
 <p>Para ello podemos utilizar dos bucles <code>for</code>:</p>
@@ -2098,7 +2098,7 @@ public class TablaMultiplicar {
     }
 }
 </code></pre>
-<h3 id="ejemplo-08-potencias-de-un-numero">Ejemplo 08: potencias de un número<a class="headerlink" href="#ejemplo-08-potencias-de-un-numero" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-08-potencias-de-un-numero">Ejemplo 08: potencias de un número</h3>
 <p>En este ejercicio se propone mostrar las potencias de 2 hasta alcanzar un límite entero indicado por el usuario.</p>
 <p>Por ejemplo, si el límite es 2000, se mostrarán:</p>
 <pre><code class="language-text">2
@@ -2125,11 +2125,11 @@ public class TablaMultiplicar {
 729
 </code></pre>
 <hr />
-<h2 id="35-combinacion-con-estructuras-de-seleccion">3.5. Combinación con estructuras de selección<a class="headerlink" href="#35-combinacion-con-estructuras-de-seleccion" title="Permanent link">&para;</a></h2>
+<h2 id="35-combinacion-con-estructuras-de-seleccion">3.5. Combinación con estructuras de selección</h2>
 <p>Las estructuras de repetición también se pueden combinar con estructuras de selección como <code>if</code>, <code>if/else</code> y <code>switch</code>.</p>
 <p>Esto permite realizar comprobaciones y tomar decisiones dentro de un bucle.</p>
 <p>De esta manera podemos repetir instrucciones, comprobar diferentes condiciones y decidir qué hacer en cada iteración.</p>
-<h3 id="ejemplo-09-adivinar-un-numero-con-tres-intentos">Ejemplo 09: adivinar un número con tres intentos<a class="headerlink" href="#ejemplo-09-adivinar-un-numero-con-tres-intentos" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-09-adivinar-un-numero-con-tres-intentos">Ejemplo 09: adivinar un número con tres intentos</h3>
 <p>Vamos a modificar el ejercicio del número secreto para permitir que el usuario tenga solamente tres intentos.</p>
 <p>El programa debe cumplir las siguientes condiciones:</p>
 <ul>
@@ -2140,7 +2140,7 @@ public class TablaMultiplicar {
 <li>El usuario puede abandonar el juego introduciendo el valor <code>-1</code>.</li>
 </ul>
 <p>En este ejercicio se combinan las estructuras de repetición con las estructuras de selección para controlar los intentos y comprobar las respuestas.</p>
-<h3 id="ejemplo-10-mostrar-un-cuadrado-de-asteriscos">Ejemplo 10: mostrar un cuadrado de asteriscos<a class="headerlink" href="#ejemplo-10-mostrar-un-cuadrado-de-asteriscos" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-10-mostrar-un-cuadrado-de-asteriscos">Ejemplo 10: mostrar un cuadrado de asteriscos</h3>
 <p>En este ejercicio se propone crear un programa que muestre un cuadrado formado por asteriscos.</p>
 <p>El usuario debe indicar la longitud del lado, que tendrá que estar comprendida entre 2 y 10.</p>
 <p>Por ejemplo, si introduce el valor 6, el resultado será:</p>
@@ -2160,7 +2160,7 @@ public class TablaMultiplicar {
 <p><strong>Modificación propuesta por el profesor:</strong></p>
 <p>Mostrar todos los cuadrados anteriores, comenzando por el lado de longitud 2 hasta llegar al tamaño indicado por el usuario.</p>
 <p>Por ejemplo, si el usuario introduce 4, se mostrarán los cuadrados de lados 2, 3 y 4.</p>
-<h3 id="ejemplo-11-mostrar-un-triangulo-de-asteriscos">Ejemplo 11: mostrar un triángulo de asteriscos<a class="headerlink" href="#ejemplo-11-mostrar-un-triangulo-de-asteriscos" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-11-mostrar-un-triangulo-de-asteriscos">Ejemplo 11: mostrar un triángulo de asteriscos</h3>
 <p>El último ejercicio del documento propone mostrar un triángulo formado por asteriscos.</p>
 <p>El usuario indica la longitud del lado y el programa muestra tantas filas como indique ese valor.</p>
 <p>Por ejemplo, para un triángulo de lado 5:</p>
@@ -2173,7 +2173,7 @@ public class TablaMultiplicar {
 <p>Para realizar este ejercicio también podemos utilizar bucles <code>for</code> anidados.</p>
 <p>El bucle exterior controla el número de filas y el interior controla cuántos asteriscos se muestran en cada una.</p>
 <hr />
-<h2 id="resumen-del-tema">Resumen del tema<a class="headerlink" href="#resumen-del-tema" title="Permanent link">&para;</a></h2>
+<h2 id="resumen-del-tema">Resumen del tema</h2>
 <p>En este apartado hemos aprendido los diferentes tipos de estructuras de repetición que podemos utilizar en Java.</p>
 <table>
 <thead>
